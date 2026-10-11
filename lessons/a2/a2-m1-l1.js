@@ -132,10 +132,40 @@ What about the future? “I know a lot of nomads who settle down after a few yea
 </table></div>
 <p>💡 Порівняй: I <b>live</b> in Dnipro. (постійно) — I<b>’m living</b> in Lisbon <b>at the moment</b>. (тимчасово, кілька місяців)</p>
 
-<h3>2. Ситуації, що змінюються</h3>
+<h3>2. Як утворюються: формули</h3>
+<p class="formula-legend"><span class="f-s">Підмет</span> хто? (I, she, my friends) · <span class="f-aux">Допоміжне</span> do / does / am / is / are · <span class="f-v">Дієслово</span> V1 — початкова форма (work), V-ing — з закінченням -ing · <span class="f-neg">not</span> заперечення</p>
+
+<h4>Present Simple</h4>
+<div class="table-wrap"><table class="ftable">
+  <tr><th>Форма</th><th>Формула</th><th>Приклади</th></tr>
+  <tr><td><b>+</b> I / you / we / they</td><td><div class="formula"><span class="f-s">Підмет</span><span class="f-op">+</span><span class="f-v">V1</span></div></td><td>I <b>work</b> from home.<br>They <b>rent</b> a flat.</td></tr>
+  <tr><td><b>+</b> he / she / it</td><td><div class="formula"><span class="f-s">Підмет</span><span class="f-op">+</span><span class="f-v">V1 + s / es</span></div></td><td>She <b>works</b> online.<br>He <b>watches</b> films. She <b>studies</b>.</td></tr>
+  <tr><td><b>−</b></td><td><div class="formula"><span class="f-s">Підмет</span><span class="f-op">+</span><span class="f-aux">don’t / doesn’t</span><span class="f-op">+</span><span class="f-v">V1</span></div></td><td>I <b>don’t have</b> an office.<br>She <b>doesn’t have</b> an office. <span class="muted">(без -s!)</span></td></tr>
+  <tr><td><b>?</b></td><td><div class="formula"><span class="f-aux">Do / Does</span><span class="f-op">+</span><span class="f-s">підмет</span><span class="f-op">+</span><span class="f-v">V1</span><span class="f-op">?</span></div></td><td><b>Do</b> you <b>work</b> online?<br><b>Does</b> she <b>like</b> it?</td></tr>
+  <tr><td><b>?</b> з питальним словом</td><td><div class="formula"><span class="f-aux">Wh-</span><span class="f-op">+</span><span class="f-aux">do / does</span><span class="f-op">+</span><span class="f-s">підмет</span><span class="f-op">+</span><span class="f-v">V1</span><span class="f-op">?</span></div></td><td>Where <b>does</b> she <b>live</b>?<br>What <b>do</b> you <b>do</b>?</td></tr>
+  <tr><td>коротка відповідь</td><td><div class="formula"><span class="f-op">Yes,</span><span class="f-s">підмет</span><span class="f-aux">do / does</span></div> <div class="formula"><span class="f-op">No,</span><span class="f-s">підмет</span><span class="f-aux">don’t / doesn’t</span></div></td><td>Yes, I <b>do</b>. / No, she <b>doesn’t</b>.</td></tr>
+</table></div>
+<p>💡 <b>-s / -es у he / she / it:</b> work → work<b>s</b> · watch → watch<b>es</b> · go → go<b>es</b> · study → stud<b>ies</b> · have → <b>has</b>.<br>
+💡 -s «живе» або в дієслові (she works), або в does (does she work?, she doesn’t work) — <b>ніколи в обох</b>.</p>
+
+<h4>Present Continuous</h4>
+<div class="table-wrap"><table class="ftable">
+  <tr><th>Форма</th><th>Формула</th><th>Приклади</th></tr>
+  <tr><td><b>+</b></td><td><div class="formula"><span class="f-s">Підмет</span><span class="f-op">+</span><span class="f-aux">am / is / are</span><span class="f-op">+</span><span class="f-v">V-ing</span></div></td><td>I<b>’m living</b> in Lisbon.<br>She<b>’s learning</b> Portuguese.<br>We<b>’re renting</b> a flat.</td></tr>
+  <tr><td><b>−</b></td><td><div class="formula"><span class="f-s">Підмет</span><span class="f-op">+</span><span class="f-aux">am / is / are</span><span class="f-op">+</span><span class="f-neg">not</span><span class="f-op">+</span><span class="f-v">V-ing</span></div></td><td>I<b>’m not working</b> today.<br>She <b>isn’t</b> (is not) <b>travelling</b> this month.</td></tr>
+  <tr><td><b>?</b></td><td><div class="formula"><span class="f-aux">Am / Is / Are</span><span class="f-op">+</span><span class="f-s">підмет</span><span class="f-op">+</span><span class="f-v">V-ing</span><span class="f-op">?</span></div></td><td><b>Are</b> you <b>working</b> now?<br><b>Is</b> she <b>living</b> abroad?</td></tr>
+  <tr><td><b>?</b> з питальним словом</td><td><div class="formula"><span class="f-aux">Wh-</span><span class="f-op">+</span><span class="f-aux">am / is / are</span><span class="f-op">+</span><span class="f-s">підмет</span><span class="f-op">+</span><span class="f-v">V-ing</span><span class="f-op">?</span></div></td><td>What <b>are</b> you <b>doing</b>?<br>Where <b>is</b> she <b>staying</b>?</td></tr>
+  <tr><td>коротка відповідь</td><td><div class="formula"><span class="f-op">Yes,</span><span class="f-s">підмет</span><span class="f-aux">am / is / are</span></div> <div class="formula"><span class="f-op">No,</span><span class="f-s">підмет</span><span class="f-aux">’m not / isn’t / aren’t</span></div></td><td>Yes, I <b>am</b>. / No, she <b>isn’t</b>.</td></tr>
+</table></div>
+<p>💡 <b>am / is / are:</b> I → <b>am</b> · he / she / it → <b>is</b> · you / we / they → <b>are</b>.<br>
+💡 <b>-ing:</b> work → work<b>ing</b> · live → liv<b>ing</b> (прибираємо -e) · sit → si<b>tt</b>ing (подвоюємо) · lie → l<b>ying</b>.</p>
+
+<div class="tip">🔑 <b>Головна різниця у формі:</b> Present Simple у питанні та запереченні потребує <b>do / does</b>, а Present Continuous — <b>am / is / are</b>. Ніколи не змішуй їх: <span class="no">Do you working?</span> <span class="no">Are you work?</span> → <span class="yes">Do you work?</span> / <span class="yes">Are you working?</span></div>
+
+<h3>3. Ситуації, що змінюються</h3>
 <p>Для змін і трендів — Present Continuous: My English <b>is getting</b> better. Prices <b>are going up</b>.</p>
 
-<h3>3. Дієслова стану (State verbs)</h3>
+<h3>4. Дієслова стану (State verbs)</h3>
 <p>Деякі дієслова описують <b>стан</b>, а не дію, і зазвичай <b>не вживаються з -ing</b>, навіть «зараз»:</p>
 <div class="table-wrap"><table>
   <tr><th>Група</th><th>Дієслова</th></tr>
@@ -147,7 +177,7 @@ What about the future? “I know a lot of nomads who settle down after a few yea
 <div class="ex-line"><span class="no">I’m knowing a lot of nomads.</span> → <span class="yes">I know a lot of nomads.</span></div>
 <div class="ex-line"><span class="no">She’s wanting a garden.</span> → <span class="yes">She wants a garden.</span></div>
 
-<h3>4. Дієслова з двома значеннями</h3>
+<h3>5. Дієслова з двома значеннями</h3>
 <div class="table-wrap"><table>
   <tr><th>Стан (Simple)</th><th>Дія (Continuous)</th></tr>
   <tr><td>I <b>think</b> it’s a good idea. (= вважаю)</td><td>I<b>’m thinking</b> about my future. (= обмірковую)</td></tr>

@@ -32,3 +32,17 @@
 У рядках JS у одинарних лапках використовуй типографський апостроф `’` (I’ve) — порівняння відповідей його розуміє.
 
 `glossary: { 'word': 'переклад', 'set off': 'вирушати' }` — для перекладача (A1–B2); закінчення -s/-ed/-ing знаходяться автоматично.
+
+## Формули в граматиці (обов’язково в кожному `rule`)
+Розділ «Як утворюються: формули» з таблицею `ftable` (+ / − / ? / Wh-? / короткі відповіді) і прикладами. Розмітка:
+
+```html
+<p class="formula-legend"><span class="f-s">Підмет</span> … <span class="f-aux">Допоміжне</span> … <span class="f-v">Дієслово</span> … <span class="f-neg">not</span></p>
+<div class="table-wrap"><table class="ftable">
+  <tr><th>Форма</th><th>Формула</th><th>Приклади</th></tr>
+  <tr><td><b>+</b> he / she / it</td>
+      <td><div class="formula"><span class="f-s">Підмет</span><span class="f-op">+</span><span class="f-v">V1 + s / es</span></div></td>
+      <td>She <b>works</b> online.</td></tr>
+</table></div>
+```
+Еталон — `lessons/a2/a2-m1-l1.js`.

@@ -755,3 +755,28 @@ body.translator .lesson textarea, body.translator .lesson input[type='text'] { c
   .player-ctrl { gap: 8px; }
   .audio-progress { order: 5; flex-basis: 100%; }
 }
+
+/* ---------- Grammar formulas (rule cards) ---------- */
+.rule-body h4 { font-size: 0.98rem; margin: 16px 0 6px; color: var(--text); }
+.formula { display: inline-flex; flex-wrap: wrap; align-items: center; gap: 4px; margin: 2px 0; }
+.formula > span { padding: 2px 8px; border-radius: 7px; font-weight: 700; font-size: 0.84rem; line-height: 1.5; white-space: nowrap; }
+.formula .f-s { background: var(--primary-soft); color: var(--primary); }
+.formula .f-aux { background: var(--warn-soft); color: var(--warn); }
+.formula .f-v { background: var(--ok-soft); color: var(--ok); }
+.formula .f-neg { background: var(--bad-soft); color: var(--bad); }
+.formula .f-op { padding: 2px 2px; color: var(--muted); font-weight: 600; }
+.formula-legend { font-size: 0.85rem; color: var(--text-2); line-height: 2; }
+.formula-legend > span { padding: 2px 8px; border-radius: 7px; font-weight: 700; font-size: 0.8rem; }
+.formula-legend .f-s { background: var(--primary-soft); color: var(--primary); }
+.formula-legend .f-aux { background: var(--warn-soft); color: var(--warn); }
+.formula-legend .f-v { background: var(--ok-soft); color: var(--ok); }
+.formula-legend .f-neg { background: var(--bad-soft); color: var(--bad); }
+.rule-body td .formula + .formula { margin-left: 6px; }
+@media (max-width: 720px) {
+  .rule-body table.ftable, .rule-body table.ftable tbody { display: block; border: 0; }
+  .rule-body table.ftable tr { display: block; border: 1px solid var(--border); border-radius: 12px; margin-bottom: 10px; overflow: hidden; }
+  .rule-body table.ftable tr:first-child { display: none; }
+  .rule-body table.ftable td { display: block; border: 0 !important; padding: 8px 12px; }
+  .rule-body table.ftable td:first-child { background: color-mix(in srgb, var(--sc) 11%, var(--surface)); font-weight: 600; }
+  .rule-body table.ftable td:last-child { border-top: 1px dashed var(--border) !important; }
+}
