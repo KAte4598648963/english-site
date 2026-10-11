@@ -36,6 +36,18 @@ window.ENG.registry = [
           { id: 'a1-m2-l3', slug: 'lesson-3', title: 'Personality', ua: 'прикметники, very/quite, and/but', file: 'lessons/a1/a1-m2-l3.js' },
           { id: 'a1-m2-l4', slug: 'lesson-4', title: 'Review: A family photo', ua: 'Повторення модуля 2', file: 'lessons/a1/a1-m2-l4.js' }
         ]
+      },
+      {
+        id: 'module-3',
+        num: 3,
+        title: 'Daily Life',
+        ua: 'Щоденне життя',
+        lessons: [
+          { id: 'a1-m3-l1', slug: 'lesson-1', title: 'My day', ua: 'Present Simple: I/you/we/they, час', file: 'lessons/a1/a1-m3-l1.js' },
+          { id: 'a1-m3-l2', slug: 'lesson-2', title: 'He works, she studies', ua: 'he/she/it + -s, професії', file: 'lessons/a1/a1-m3-l2.js' },
+          { id: 'a1-m3-l3', slug: 'lesson-3', title: 'Do you…?', ua: 'do/does, частотні прислівники', file: 'lessons/a1/a1-m3-l3.js' },
+          { id: 'a1-m3-l4', slug: 'lesson-4', title: 'Review: A day in my life', ua: 'Повторення модуля 3', file: 'lessons/a1/a1-m3-l4.js' }
+        ]
       }
     ]
   },
