@@ -206,7 +206,7 @@ Ira`
             items: [
               { id: 'm1', q: 'There ___ a lake next to the house.', options: ['is', 'are', 'has'], answer: 0 },
               { id: 'm2', q: 'There aren’t ___ shops in the village.', options: ['some', 'any', 'a'], answer: 1 },
-              { id: 'm3', q: 'How ___ fish do we need?', options: ['much', 'many'], answer: 1, explain: 'fish тут злічуване (риби) → how many.' },
+              { id: 'm3', q: 'How ___ friends are there at the lake?', options: ['much', 'many'], answer: 1, explain: 'friends — злічуване → how many.' },
               { id: 'm4', q: 'Oksana ___ got a guitar.', options: ['have', 'has', 'is'], answer: 1 },
               { id: 'm5', q: 'This is ___ house.', options: ['Taras', 'Taras’s', 'Tarases'], answer: 1 }
             ]
