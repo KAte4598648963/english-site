@@ -213,40 +213,126 @@
     }
   };
 
-  /* ---------- Speech synthesis (Listening) ---------- */
+  /* ---------- Speech synthesis (Listening) ----------
+   * Picks the most natural English voices available on the device
+   * (Natural / Neural / Google / Enhanced…), gives each dialogue speaker
+   * its own voice (female / male where possible) and plays lines one by one,
+   * so the player can highlight, pause and replay single lines.
+   * Chosen voices are stored in eng:_app:voices = { f: name, m: name }.
+   */
   const synth = window.speechSynthesis;
+  const FEMALE = /\b(female|woman|samantha|karen|moira|tessa|serena|fiona|victoria|libby|sonia|jenny|aria|emma|ava|zira|hazel|susan|kate|martha|allison|joanna|kendra|kimberly|salli|ivy|amy|olivia|natasha|clara|michelle|ana|maisie|abbie|bella|hollie|elizabeth|nancy|sara|jane|catherine|isla|ruth|libby|mia|molly|aurora)\b/i;
+  const MALE = /\b(male|man|daniel|arthur|alex|fred|oliver|ryan|guy|david|mark|george|thomas|christopher|eric|brian|andrew|rishi|james|william|matthew|joey|justin|kevin|liam|noah|ethan|alfie|elliot|harry|jason|tony|roger|steffan|davis|aaron|gordon|rocko|reed|grandpa)\b/i;
+  function quality(v) {
+    const n = v.name;
+    let q = 0;
+    if (/natural|neural|online/i.test(n)) q += 60;
+    if (/premium|enhanced|siri/i.test(n)) q += 50;
+    if (/google/i.test(n)) q += 40;
+    if (/microsoft/i.test(n) && !/natural|online/i.test(n)) q -= 10;
+    if (/(espeak|robot|bad news|bells|boing|bubbles|cellos|whisper|zarvox|trinoids|jester|organ|superstar|wobble|albert|bahh|junior|ralph)/i.test(n)) q -= 100;
+    if (/en[-_](GB|US)/i.test(v.lang)) q += 10;
+    else if (/en[-_](AU|IE|CA|NZ)/i.test(v.lang)) q += 5;
+    return q;
+  }
+  const genderOf = (v) => (FEMALE.test(v.name) ? 'f' : MALE.test(v.name) ? 'm' : '');
+  // Character names in lessons → voice gender
+  const FEMALE_NAMES = /^(kate|sofia|sofiia|anna|olena|ira|iryna|maria|marta|olha|olga|kira|yana|yuliia|yulia|dasha|daryna|lena|liza|nina|lucy|emma|mia|alina|halyna|oksana|natalia|nastia|tetiana|vira|kateryna|larysa|mrs|ms|mum|granny|grandma|girl|woman|lady|mila|sara|ksenia|iryna|nadiia|svitlana|olivia|vika|anya)/i;
+  const MALE_NAMES = /^(tom|ben|max|sam|mark|marko|jack|paul|petro|taras|ihor|dmytro|dima|den|oleh|oleksii|oleksandr|ostap|roman|bohdan|nick|dad|grandpa|mr|man|boy|james|diego|serhii|andrii|kostia|maks|danylo|artem|yaroslav|nazar|vlad|ivan|mykola|pavlo)/i;
+  ENG.speakerGender = function (who) {
+    if (!who) return '';
+    if (MALE_NAMES.test(who)) return 'm';
+    if (FEMALE_NAMES.test(who)) return 'f';
+    return '';
+  };
+
+  let playToken = 0;
   ENG.speech = {
     supported: !!synth && typeof window.SpeechSynthesisUtterance === 'function',
+    rate: 1,
+    /** English voices, best first */
     voices() {
       if (!this.supported) return [];
-      const all = synth.getVoices().filter((v) => /^en[-_]/i.test(v.lang));
-      const rank = (v) => (/en[-_]GB/i.test(v.lang) ? 0 : /en[-_]US/i.test(v.lang) ? 1 : 2);
-      return all.sort((a, b) => rank(a) - rank(b));
+      return synth
+        .getVoices()
+        .filter((v) => /^en[-_]/i.test(v.lang))
+        .sort((a, b) => quality(b) - quality(a));
     },
-    /** lines: [{ text, voice: 0|1 }] */
+    isNatural(v) {
+      return quality(v) >= 40;
+    },
+    genderOf,
+    /** Voice for gender 'f' | 'm' — saved choice, else best of that gender, else best overall */
+    voiceFor(g) {
+      const list = this.voices();
+      if (!list.length) return null;
+      const saved = (ENG.store && ENG.store.app('voices', {})) || {};
+      const byName = (n) => list.find((v) => v.name === n);
+      if (saved[g] && byName(saved[g])) return byName(saved[g]);
+      const same = list.find((v) => genderOf(v) === g);
+      if (same) return same;
+      // no gendered voice: use the 1st / 2nd best so speakers still differ
+      return g === 'm' ? list[1] || list[0] : list[0];
+    },
+    /** True when both genders resolve to the same voice → use pitch to differ */
+    sameVoice() {
+      const f = this.voiceFor('f');
+      const m = this.voiceFor('m');
+      return !!f && !!m && f.name === m.name;
+    },
+    /** Speak one line. opts: { gender, rate, onstart, onend } */
+    say(text, opts) {
+      if (!this.supported) return false;
+      opts = opts || {};
+      const g = opts.gender || 'f';
+      const u = new SpeechSynthesisUtterance(text);
+      const v = this.voiceFor(g);
+      if (v) {
+        u.voice = v;
+        u.lang = v.lang;
+      } else u.lang = 'en-GB';
+      u.rate = (opts.rate || 1) * 0.95;
+      u.pitch = this.sameVoice() ? (g === 'm' ? 0.85 : 1.1) : 1;
+      u.onstart = opts.onstart || null;
+      u.onend = opts.onend || null;
+      u.onerror = opts.onend || null;
+      this._u = u; // keep a reference (Chrome may drop events otherwise)
+      synth.speak(u);
+      return true;
+    },
+    /** Simple API used by flashcards, dictation, speaking: speak a string or [{text}] */
     speak(lines, opts) {
       if (!this.supported) return false;
       opts = opts || {};
-      synth.cancel();
-      const voices = this.voices();
+      this.stop();
       const list = typeof lines === 'string' ? [{ text: lines }] : lines;
-      list.forEach((line, i) => {
-        const u = new SpeechSynthesisUtterance(line.text);
-        const vi = line.voice || 0;
-        if (voices.length) u.voice = voices[Math.min(vi, voices.length - 1)];
-        u.lang = (u.voice && u.voice.lang) || 'en-GB';
-        u.rate = opts.rate || 0.95;
-        u.pitch = vi === 1 ? 1.15 : 0.95;
-        if (i === list.length - 1 && opts.onend) u.onend = opts.onend;
-        synth.speak(u);
-      });
+      const token = ++playToken;
+      let i = 0;
+      const next = () => {
+        if (token !== playToken) return;
+        if (i >= list.length) return opts.onend && opts.onend();
+        const line = list[i++];
+        this.say(line.text, { gender: line.gender || (line.voice === 1 ? 'm' : 'f'), rate: opts.rate, onend: next });
+      };
+      next();
       return true;
     },
     stop() {
+      playToken++;
       if (this.supported) synth.cancel();
+    },
+    newToken() {
+      this.stop();
+      return playToken;
+    },
+    isCurrent(t) {
+      return t === playToken;
     }
   };
-  if (ENG.speech.supported) synth.onvoiceschanged = () => {};
+  if (ENG.speech.supported) {
+    synth.getVoices();
+    synth.addEventListener && synth.addEventListener('voiceschanged', () => document.dispatchEvent(new Event('eng:voices')));
+  }
 
   ENG.SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition || null;
 

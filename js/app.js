@@ -496,39 +496,203 @@
     }
 
     function renderAudio(a, revealed) {
+      const sp = ENG.speech;
       const lines = a.lines || [{ text: a.text }];
       const speakers = [];
       lines.forEach((l) => l.who && speakers.indexOf(l.who) < 0 && speakers.push(l.who));
-      const queue = lines.map((l) => ({ text: l.text, voice: Math.max(0, speakers.indexOf(l.who)) % 2 }));
+      // voice gender per speaker: guess from the name, otherwise make them differ
+      const genders = {};
+      speakers.forEach((w) => (genders[w] = ENG.speakerGender(w)));
+      speakers.forEach((w, i) => {
+        if (genders[w]) return;
+        const other = speakers.find((o) => o !== w && genders[o]);
+        genders[w] = other ? (genders[other] === 'f' ? 'm' : 'f') : i % 2 ? 'm' : 'f';
+      });
+      const genderOfLine = (l) => (l.who ? genders[l.who] : 'f');
+
+      let idx = 0;
       let playing = false;
-      let rate = 0.95;
-      const playBtn = h('button', { class: 'btn btn-primary', type: 'button' });
-      const paintPlay = () => playBtn.replaceChildren(ENG.icon(playing ? 'stop' : 'play'), playing ? 'Стоп' : 'Слухати');
-      paintPlay();
-      playBtn.addEventListener('click', () => {
-        if (playing) {
-          ENG.speech.stop();
-          playing = false;
-          return paintPlay();
-        }
-        if (!ENG.speech.speak(queue, { rate, onend: () => ((playing = false), paintPlay()) })) return ENG.toast('Браузер не підтримує озвучення — відкрий транскрипт');
+      let single = -1;
+      let rate = Number(store.app('audioRate', 1)) || 1;
+      let token = 0;
+
+      /* chat bubbles */
+      const bubbles = lines.map((l, i) => {
+        const si = Math.max(0, speakers.indexOf(l.who));
+        const right = speakers.length > 1 && si % 2 === 1;
+        const b = h(
+          'button',
+          { class: 'bubble' + (right ? ' right' : '') + ' spk-' + (si % 4), type: 'button', title: 'Прослухати цю репліку' },
+          l.who ? h('span', { class: 'avatar', 'aria-hidden': 'true' }, l.who.trim()[0].toUpperCase()) : h('span', { class: 'avatar', 'aria-hidden': 'true' }, ENG.icon('volume')),
+          h('span', { class: 'bubble-body' }, l.who ? h('span', { class: 'bubble-name' }, l.who) : null, h('span', { class: 'bubble-text' }, l.text))
+        );
+        b.addEventListener('click', () => playSingle(i));
+        return b;
+      });
+      const chat = h('div', { class: 'chat transcript' + (revealed ? ' show' : '') }, bubbles);
+
+      /* controls */
+      const playBtn = h('button', { class: 'play-btn', type: 'button' });
+      const restartBtn = h('button', { class: 'icon-btn', type: 'button', title: 'З початку', 'aria-label': 'З початку' }, ENG.icon('reset'));
+      const speeds = [0.75, 1, 1.25];
+      const speedBtns = speeds.map((r) =>
+        h('button', { class: 'seg', type: 'button', 'aria-pressed': String(r === rate), onclick: () => setRate(r) }, r + '×')
+      );
+      const trBtn = h('button', { class: 'btn btn-ghost sm', type: 'button', onclick: () => chat.classList.toggle('show') }, ENG.icon('eye'), 'Текст');
+      const voiceBtn = h('button', { class: 'icon-btn', type: 'button', title: 'Голоси', 'aria-label': 'Налаштувати голоси' }, ENG.icon('mic'));
+      const counter = h('span', { class: 'audio-count' });
+      const barFill = h('span');
+      const bar = h('div', { class: 'audio-bar' }, barFill);
+
+      function setRate(r) {
+        rate = r;
+        store.setApp('audioRate', r);
+        speedBtns.forEach((b, i) => b.setAttribute('aria-pressed', String(speeds[i] === r)));
+        if (playing) play(idx);
+      }
+      function paint() {
+        playBtn.replaceChildren(ENG.icon(playing ? 'pause' : 'play'));
+        playBtn.setAttribute('aria-label', playing ? 'Пауза' : 'Слухати');
+        playBtn.classList.toggle('on', playing);
+        const cur = single >= 0 ? single : idx;
+        bubbles.forEach((b, i) => {
+          b.classList.toggle('speaking', (playing || single >= 0) && i === cur);
+          b.classList.toggle('done', single < 0 && i < idx);
+        });
+        counter.textContent = Math.min(idx + (playing ? 1 : 0), lines.length) + ' / ' + lines.length;
+        barFill.style.width = (Math.min(idx, lines.length) / lines.length) * 100 + '%';
+      }
+      function scrollTo(i) {
+        const b = bubbles[i];
+        if (!b) return;
+        const r = b.getBoundingClientRect();
+        if (r.top < 120 || r.bottom > window.innerHeight - 20) b.scrollIntoView({ block: 'center', behavior: 'smooth' });
+      }
+      function play(from) {
+        if (!sp.supported) return ENG.toast('Браузер не підтримує озвучення — відкрий текст');
+        single = -1;
+        idx = from;
+        token = sp.newToken();
         playing = true;
-        paintPlay();
+        const t = token;
+        const step = () => {
+          if (!sp.isCurrent(t)) return;
+          if (idx >= lines.length) {
+            playing = false;
+            idx = lines.length;
+            paint();
+            return;
+          }
+          paint();
+          scrollTo(idx);
+          sp.say(lines[idx].text, {
+            gender: genderOfLine(lines[idx]),
+            rate,
+            onend: () => {
+              if (!sp.isCurrent(t)) return;
+              idx++;
+              setTimeout(step, 350);
+            }
+          });
+        };
+        step();
+      }
+      function pause() {
+        sp.stop();
+        playing = false;
+        paint();
+      }
+      function playSingle(i) {
+        if (!sp.supported) return ENG.toast('Браузер не підтримує озвучення');
+        token = sp.newToken();
+        const t = token;
+        playing = false;
+        single = i;
+        paint();
+        sp.say(lines[i].text, {
+          gender: genderOfLine(lines[i]),
+          rate,
+          onend: () => {
+            if (!sp.isCurrent(t)) return;
+            single = -1;
+            paint();
+          }
+        });
+      }
+      playBtn.addEventListener('click', () => (playing ? pause() : play(idx >= lines.length ? 0 : idx)));
+      restartBtn.addEventListener('click', () => play(0));
+
+      /* voice settings */
+      const panel = h('div', { class: 'voice-panel', hidden: true });
+      function buildPanel() {
+        const list = sp.voices();
+        const saved = store.app('voices', {});
+        const natural = list.some((v) => sp.isNatural(v));
+        const row = (g, label) => {
+          const sel = h(
+            'select',
+            { class: 'voice-select', 'aria-label': label },
+            h('option', { value: '' }, 'Авто — найкращий'),
+            list.map((v) => h('option', { value: v.name, selected: saved[g] === v.name }, (sp.isNatural(v) ? '★ ' : '') + v.name.replace(/^(Microsoft|Google)\s/, '$1 ') + ' · ' + v.lang))
+          );
+          sel.addEventListener('change', () => {
+            const cur = store.app('voices', {});
+            if (sel.value) cur[g] = sel.value;
+            else delete cur[g];
+            store.setApp('voices', cur);
+            test(g);
+          });
+          const test = (gg) => {
+            sp.stop();
+            sp.say(gg === 'm' ? 'Hello! This is the second voice.' : 'Hi there! This is how I sound.', { gender: gg, rate });
+          };
+          return h('div', { class: 'voice-row' }, h('span', { class: 'voice-label' }, label), sel, h('button', { class: 'icon-btn sm', type: 'button', title: 'Прослухати', onclick: () => test(g) }, ENG.icon('play')));
+        };
+        panel.replaceChildren(
+          row('f', 'Голос 1 (жіночий)'),
+          row('m', 'Голос 2 (чоловічий)'),
+          h(
+            'p',
+            { class: 'muted small voice-note' },
+            !list.length
+              ? 'Голоси ще завантажуються або недоступні в цьому браузері.'
+              : natural
+              ? '★ — природні (нейронні) голоси. Вибір запам’ятовується для всіх уроків.'
+              : 'На цьому пристрої немає природних голосів. Найкраще звучить у Chrome або Edge — там є голоси «Google» і «Natural».'
+          )
+        );
+      }
+      voiceBtn.addEventListener('click', () => {
+        buildPanel();
+        panel.hidden = !panel.hidden;
+        voiceBtn.classList.toggle('active', !panel.hidden);
       });
-      const speed = h('button', { class: 'btn btn-ghost', type: 'button', 'aria-pressed': 'false' }, ENG.icon('turtle'), 'Повільніше');
-      speed.addEventListener('click', () => {
-        rate = rate < 0.9 ? 0.95 : 0.7;
-        speed.setAttribute('aria-pressed', String(rate < 0.9));
-        speed.classList.toggle('active', rate < 0.9);
-      });
-      const transcript = h('div', { class: 'transcript' + (revealed ? ' show' : '') }, lines.map((l) => h('p', null, l.who ? h('b', null, l.who + ': ') : null, l.text)));
-      const trBtn = h('button', { class: 'btn btn-ghost', type: 'button', onclick: () => transcript.classList.toggle('show') }, ENG.icon('eye'), 'Транскрипт');
+      document.addEventListener('eng:voices', () => !panel.hidden && buildPanel());
+
+      paint();
+      const subtitle = !sp.supported ? 'Озвучення недоступне в цьому браузері' : speakers.length > 1 ? speakers.length + ' голоси · натисни на репліку, щоб почути її ще раз' : 'Натисни на текст, щоб почути його ще раз';
       return h(
         'div',
-        { class: 'audio-box' },
-        h('div', { class: 'audio-row' }, h('span', { class: 'audio-ico' }, ENG.icon('volume')), h('div', { class: 'audio-title' }, a.title || 'Audio', h('span', { class: 'muted small' }, ENG.speech.supported ? 'Озвучення браузером' : 'Озвучення недоступне')), h('div', { class: 'audio-ctrl' }, playBtn, speed, trBtn)),
-        h('div', { class: 'muted small transcript-note' }, 'Спробуй спершу без транскрипту — він відкриється після перевірки.'),
-        transcript
+        { class: 'audio-box player' },
+        h(
+          'div',
+          { class: 'player-head' },
+          h('span', { class: 'audio-ico' }, ENG.icon('volume')),
+          h('div', { class: 'audio-title' }, a.title || 'Audio', h('span', { class: 'muted small' }, subtitle)),
+          voiceBtn
+        ),
+        h(
+          'div',
+          { class: 'player-ctrl' },
+          playBtn,
+          restartBtn,
+          h('div', { class: 'audio-progress' }, bar, counter),
+          h('div', { class: 'segs', role: 'group', 'aria-label': 'Швидкість' }, speedBtns),
+          trBtn
+        ),
+        panel,
+        chat,
+        h('div', { class: 'muted small transcript-note' }, 'Текст розмитий: спробуй спершу зрозуміти на слух. Він відкриється після перевірки або кнопкою «Текст».')
       );
     }
 
