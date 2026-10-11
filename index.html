@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>English Studio — англійська A1–C2</title>
+  <meta name="description" content="Інтерактивні уроки англійської: Reading, Vocabulary, Grammar, Listening, Writing, Speaking.">
+  <meta name="theme-color" content="#f6f4ef" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#151a24" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%235b6fd6'/%3E%3Ctext x='32' y='43' font-family='Georgia,serif' font-size='30' text-anchor='middle' fill='white'%3EEn%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Fraunces:opsz,wght@9..144,500;9..144,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <script>
+    /* apply saved theme before paint (no flash) */
+    (function () {
+      try {
+        var p = JSON.parse(localStorage.getItem('eng:_app:prefs') || 'null');
+        var t = (p && p.d && p.d.theme) || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+<body>
+  <div class="app">
+    <aside class="sidebar" id="sidebar" aria-label="Рівні та модулі">
+      <a class="brand" id="brandHome" href="#/"><span class="brand-name">English Studio</span></a>
+      <div class="sidebar-label">Рівні</div>
+      <ul class="levels" id="levelNav"></ul>
+      <div class="sidebar-foot">Прогрес зберігається у цьому браузері</div>
+    </aside>
+    <div class="scrim" id="scrim"></div>
+
+    <div class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Меню"></button>
+        <nav class="crumbs" id="crumbs" aria-label="Навігація"></nav>
+        <button class="icon-btn" id="themeBtn" type="button" aria-label="Тема"></button>
+      </header>
+      <main id="view" class="view"></main>
+    </div>
+  </div>
+
+  <aside class="drawer" id="drawer" aria-hidden="true"></aside>
+  <div class="tr-tip" id="trTip" role="tooltip"></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal" id="modal"></div>
+
+  <script src="js/core.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="lessons/index.js"></script>
+  <script src="js/exercises.js"></script>
+  <script src="js/timer.js"></script>
+  <script src="js/toolbar.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>
