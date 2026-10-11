@@ -48,6 +48,18 @@ window.ENG.registry = [
           { id: 'a1-m3-l3', slug: 'lesson-3', title: 'Do you…?', ua: 'do/does, частотні прислівники', file: 'lessons/a1/a1-m3-l3.js' },
           { id: 'a1-m3-l4', slug: 'lesson-4', title: 'Review: A day in my life', ua: 'Повторення модуля 3', file: 'lessons/a1/a1-m3-l4.js' }
         ]
+      },
+      {
+        id: 'module-4',
+        num: 4,
+        title: 'Home & Town',
+        ua: 'Дім і місто',
+        lessons: [
+          { id: 'a1-m4-l1', slug: 'lesson-1', title: 'My home', ua: 'there is / there are, прийменники місця', file: 'lessons/a1/a1-m4-l1.js' },
+          { id: 'a1-m4-l2', slug: 'lesson-2', title: 'In my town', ua: 'some / any, накази, як пройти', file: 'lessons/a1/a1-m4-l2.js' },
+          { id: 'a1-m4-l3', slug: 'lesson-3', title: 'Shopping', ua: 'злічувані / незлічувані, how much / many', file: 'lessons/a1/a1-m4-l3.js' },
+          { id: 'a1-m4-l4', slug: 'lesson-4', title: 'Review: Welcome to my town', ua: 'Повторення модуля 4', file: 'lessons/a1/a1-m4-l4.js' }
+        ]
       }
     ]
   },
