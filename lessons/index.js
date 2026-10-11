@@ -116,6 +116,18 @@ window.ENG.registry = [
           { id: 'a2-m2-l3', slug: 'lesson-3', title: 'Telling a story', ua: 'прислівники способу дії, слова-зв’язки', file: 'lessons/a2/a2-m2-l3.js' },
           { id: 'a2-m2-l4', slug: 'lesson-4', title: 'Review: The wrong train', ua: 'Повторення модуля 2', file: 'lessons/a2/a2-m2-l4.js' }
         ]
+      },
+      {
+        id: 'module-3',
+        num: 3,
+        title: 'Places & Comparisons',
+        ua: 'Місця та порівняння',
+        lessons: [
+          { id: 'a2-m3-l1', slug: 'lesson-1', title: 'City or village?', ua: 'вищий ступінь порівняння', file: 'lessons/a2/a2-m3-l1.js' },
+          { id: 'a2-m3-l2', slug: 'lesson-2', title: 'The best place on Earth', ua: 'найвищий ступінь', file: 'lessons/a2/a2-m3-l2.js' },
+          { id: 'a2-m3-l3', slug: 'lesson-3', title: 'Is it big enough?', ua: 'too / enough, as … as', file: 'lessons/a2/a2-m3-l3.js' },
+          { id: 'a2-m3-l4', slug: 'lesson-4', title: 'Review: Where shall we go?', ua: 'Повторення модуля 3', file: 'lessons/a2/a2-m3-l4.js' }
+        ]
       }
     ]
   },
