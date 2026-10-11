@@ -104,6 +104,18 @@ window.ENG.registry = [
           { id: 'a2-m1-l3', slug: 'lesson-3', title: 'Childhood memories', ua: 'used to', file: 'lessons/a2/a2-m1-l3.js' },
           { id: 'a2-m1-l4', slug: 'lesson-4', title: 'Review: The school reunion', ua: 'Повторення модуля 1', file: 'lessons/a2/a2-m1-l4.js' }
         ]
+      },
+      {
+        id: 'module-2',
+        num: 2,
+        title: 'Stories',
+        ua: 'Історії',
+        lessons: [
+          { id: 'a2-m2-l1', slug: 'lesson-1', title: 'What were you doing?', ua: 'Past Continuous', file: 'lessons/a2/a2-m2-l1.js' },
+          { id: 'a2-m2-l2', slug: 'lesson-2', title: 'It happened when…', ua: 'Past Simple vs Continuous, when / while', file: 'lessons/a2/a2-m2-l2.js' },
+          { id: 'a2-m2-l3', slug: 'lesson-3', title: 'Telling a story', ua: 'прислівники способу дії, слова-зв’язки', file: 'lessons/a2/a2-m2-l3.js' },
+          { id: 'a2-m2-l4', slug: 'lesson-4', title: 'Review: The wrong train', ua: 'Повторення модуля 2', file: 'lessons/a2/a2-m2-l4.js' }
+        ]
       }
     ]
   },
