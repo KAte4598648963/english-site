@@ -72,6 +72,18 @@ window.ENG.registry = [
           { id: 'a1-m5-l3', slug: 'lesson-3', title: 'What are you doing now?', ua: 'Present Continuous', file: 'lessons/a1/a1-m5-l3.js' },
           { id: 'a1-m5-l4', slug: 'lesson-4', title: 'Review: My weekend', ua: 'Повторення модуля 5', file: 'lessons/a1/a1-m5-l4.js' }
         ]
+      },
+      {
+        id: 'module-6',
+        num: 6,
+        title: 'Yesterday',
+        ua: 'Минуле',
+        lessons: [
+          { id: 'a1-m6-l1', slug: 'lesson-1', title: 'Where were you?', ua: 'was / were', file: 'lessons/a1/a1-m6-l1.js' },
+          { id: 'a1-m6-l2', slug: 'lesson-2', title: 'Last weekend', ua: 'Past Simple: правильні дієслова', file: 'lessons/a1/a1-m6-l2.js' },
+          { id: 'a1-m6-l3', slug: 'lesson-3', title: 'My first trip', ua: 'неправильні дієслова, did / didn’t', file: 'lessons/a1/a1-m6-l3.js' },
+          { id: 'a1-m6-l4', slug: 'lesson-4', title: 'Review A1: My English story', ua: 'Підсумкове повторення A1', file: 'lessons/a1/a1-m6-l4.js' }
+        ]
       }
     ]
   },
