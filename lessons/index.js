@@ -87,7 +87,26 @@ window.ENG.registry = [
       }
     ]
   },
-  { id: 'a2', name: 'A2', title: 'Elementary', ua: 'Елементарний', modules: [] },
+  {
+    id: 'a2',
+    name: 'A2',
+    title: 'Elementary',
+    ua: 'Елементарний',
+    modules: [
+      {
+        id: 'module-1',
+        num: 1,
+        title: 'People & Lifestyles',
+        ua: 'Люди та спосіб життя',
+        lessons: [
+          { id: 'a2-m1-l1', slug: 'lesson-1', title: 'My lifestyle', ua: 'Present Simple vs Continuous, дієслова стану', file: 'lessons/a2/a2-m1-l1.js' },
+          { id: 'a2-m1-l2', slug: 'lesson-2', title: 'People I admire', ua: 'who / which / that / where', file: 'lessons/a2/a2-m1-l2.js' },
+          { id: 'a2-m1-l3', slug: 'lesson-3', title: 'Childhood memories', ua: 'used to', file: 'lessons/a2/a2-m1-l3.js' },
+          { id: 'a2-m1-l4', slug: 'lesson-4', title: 'Review: The school reunion', ua: 'Повторення модуля 1', file: 'lessons/a2/a2-m1-l4.js' }
+        ]
+      }
+    ]
+  },
   {
     id: 'b1',
     name: 'B1',
