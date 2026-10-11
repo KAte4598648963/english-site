@@ -152,6 +152,18 @@ window.ENG.registry = [
           { id: 'a2-m5-l3', slug: 'lesson-3', title: 'Healthy eating', ua: 'a lot of, much / many, a few / a little', file: 'lessons/a2/a2-m5-l3.js' },
           { id: 'a2-m5-l4', slug: 'lesson-4', title: 'Review: The 30-day challenge', ua: 'Повторення модуля 5', file: 'lessons/a2/a2-m5-l4.js' }
         ]
+      },
+      {
+        id: 'module-6',
+        num: 6,
+        title: 'Experiences',
+        ua: 'Досвід',
+        lessons: [
+          { id: 'a2-m6-l1', slug: 'lesson-1', title: 'Have you ever…?', ua: 'Present Perfect: ever / never', file: 'lessons/a2/a2-m6-l1.js' },
+          { id: 'a2-m6-l2', slug: 'lesson-2', title: 'Not yet!', ua: 'just / already / yet', file: 'lessons/a2/a2-m6-l2.js' },
+          { id: 'a2-m6-l3', slug: 'lesson-3', title: 'If it rains…', ua: 'First Conditional', file: 'lessons/a2/a2-m6-l3.js' },
+          { id: 'a2-m6-l4', slug: 'lesson-4', title: 'Review A2: The time capsule', ua: 'Підсумкове повторення A2', file: 'lessons/a2/a2-m6-l4.js' }
+        ]
       }
     ]
   },
