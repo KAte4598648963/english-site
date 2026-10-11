@@ -128,6 +128,18 @@ window.ENG.registry = [
           { id: 'a2-m3-l3', slug: 'lesson-3', title: 'Is it big enough?', ua: 'too / enough, as … as', file: 'lessons/a2/a2-m3-l3.js' },
           { id: 'a2-m3-l4', slug: 'lesson-4', title: 'Review: Where shall we go?', ua: 'Повторення модуля 3', file: 'lessons/a2/a2-m3-l4.js' }
         ]
+      },
+      {
+        id: 'module-4',
+        num: 4,
+        title: 'Plans & Future',
+        ua: 'Плани та майбутнє',
+        lessons: [
+          { id: 'a2-m4-l1', slug: 'lesson-1', title: 'Plans and hopes', ua: 'be going to, want / hope to', file: 'lessons/a2/a2-m4-l1.js' },
+          { id: 'a2-m4-l2', slug: 'lesson-2', title: 'My diary', ua: 'Present Continuous для домовленостей', file: 'lessons/a2/a2-m4-l2.js' },
+          { id: 'a2-m4-l3', slug: 'lesson-3', title: 'Predictions', ua: 'will / won’t', file: 'lessons/a2/a2-m4-l3.js' },
+          { id: 'a2-m4-l4', slug: 'lesson-4', title: 'Review: The big day', ua: 'Повторення модуля 4', file: 'lessons/a2/a2-m4-l4.js' }
+        ]
       }
     ]
   },
