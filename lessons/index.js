@@ -60,6 +60,18 @@ window.ENG.registry = [
           { id: 'a1-m4-l3', slug: 'lesson-3', title: 'Shopping', ua: 'злічувані / незлічувані, how much / many', file: 'lessons/a1/a1-m4-l3.js' },
           { id: 'a1-m4-l4', slug: 'lesson-4', title: 'Review: Welcome to my town', ua: 'Повторення модуля 4', file: 'lessons/a1/a1-m4-l4.js' }
         ]
+      },
+      {
+        id: 'module-5',
+        num: 5,
+        title: 'Free Time',
+        ua: 'Вільний час',
+        lessons: [
+          { id: 'a1-m5-l1', slug: 'lesson-1', title: 'Hobbies', ua: 'like / love + -ing, me / him / them', file: 'lessons/a1/a1-m5-l1.js' },
+          { id: 'a1-m5-l2', slug: 'lesson-2', title: 'I can swim!', ua: 'can / can’t', file: 'lessons/a1/a1-m5-l2.js' },
+          { id: 'a1-m5-l3', slug: 'lesson-3', title: 'What are you doing now?', ua: 'Present Continuous', file: 'lessons/a1/a1-m5-l3.js' },
+          { id: 'a1-m5-l4', slug: 'lesson-4', title: 'Review: My weekend', ua: 'Повторення модуля 5', file: 'lessons/a1/a1-m5-l4.js' }
+        ]
       }
     ]
   },
