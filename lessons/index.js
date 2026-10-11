@@ -140,6 +140,18 @@ window.ENG.registry = [
           { id: 'a2-m4-l3', slug: 'lesson-3', title: 'Predictions', ua: 'will / won’t', file: 'lessons/a2/a2-m4-l3.js' },
           { id: 'a2-m4-l4', slug: 'lesson-4', title: 'Review: The big day', ua: 'Повторення модуля 4', file: 'lessons/a2/a2-m4-l4.js' }
         ]
+      },
+      {
+        id: 'module-5',
+        num: 5,
+        title: 'Health & Rules',
+        ua: 'Здоров’я та правила',
+        lessons: [
+          { id: 'a2-m5-l1', slug: 'lesson-1', title: 'At the doctor’s', ua: 'should / shouldn’t', file: 'lessons/a2/a2-m5-l1.js' },
+          { id: 'a2-m5-l2', slug: 'lesson-2', title: 'Rules', ua: 'must / have to / mustn’t / don’t have to', file: 'lessons/a2/a2-m5-l2.js' },
+          { id: 'a2-m5-l3', slug: 'lesson-3', title: 'Healthy eating', ua: 'a lot of, much / many, a few / a little', file: 'lessons/a2/a2-m5-l3.js' },
+          { id: 'a2-m5-l4', slug: 'lesson-4', title: 'Review: The 30-day challenge', ua: 'Повторення модуля 5', file: 'lessons/a2/a2-m5-l4.js' }
+        ]
       }
     ]
   },
