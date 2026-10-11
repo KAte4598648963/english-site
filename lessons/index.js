@@ -24,6 +24,18 @@ window.ENG.registry = [
           { id: 'a1-m1-l3', slug: 'lesson-3', title: 'My things', ua: 'a/an, множина, this/these', file: 'lessons/a1/a1-m1-l3.js' },
           { id: 'a1-m1-l4', slug: 'lesson-4', title: 'Review: Meet my new friend', ua: 'Повторення модуля 1', file: 'lessons/a1/a1-m1-l4.js' }
         ]
+      },
+      {
+        id: 'module-2',
+        num: 2,
+        title: 'Family & People',
+        ua: 'Сім’я та люди',
+        lessons: [
+          { id: 'a1-m2-l1', slug: 'lesson-1', title: 'My family', ua: 'my/his/her, присвійний ’s', file: 'lessons/a1/a1-m2-l1.js' },
+          { id: 'a1-m2-l2', slug: 'lesson-2', title: 'What do they look like?', ua: 'have got / has got', file: 'lessons/a1/a1-m2-l2.js' },
+          { id: 'a1-m2-l3', slug: 'lesson-3', title: 'Personality', ua: 'прикметники, very/quite, and/but', file: 'lessons/a1/a1-m2-l3.js' },
+          { id: 'a1-m2-l4', slug: 'lesson-4', title: 'Review: A family photo', ua: 'Повторення модуля 2', file: 'lessons/a1/a1-m2-l4.js' }
+        ]
       }
     ]
   },
