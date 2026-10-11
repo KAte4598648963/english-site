@@ -10,7 +10,7 @@
     vocabulary: { name: 'Vocabulary', ua: 'Лексика', emoji: '🗂️' },
     grammar: { name: 'Grammar', ua: 'Граматика', emoji: '🧩' },
     listening: { name: 'Listening', ua: 'Аудіювання', emoji: '🎧' },
-    writing: { name: 'Writing', ua: 'Письмо', emoji: '✍️' },
+    writing: { name: 'Writing', ua: 'Письмо', emoji: '✍️', homework: true },
     speaking: { name: 'Speaking', ua: 'Говоріння', emoji: '🗣️' }
   };
   ENG.SECTIONS = SECTIONS;
@@ -281,7 +281,7 @@
     flat.forEach((f, i) => {
       if (f.sec !== lastSec) {
         const meta = SECTIONS[f.sec.id] || { name: f.sec.title || f.sec.id };
-        group = h('div', { class: 'step-group sec-' + f.sec.id }, h('div', { class: 'step-label' }, f.sec.title || meta.name), h('div', { class: 'step-dots' }));
+        group = h('div', { class: 'step-group sec-' + f.sec.id }, h('div', { class: 'step-label' }, (f.sec.title || meta.name) + (meta.homework ? ' · Homework' : '')), h('div', { class: 'step-dots' }));
         steps.appendChild(group);
         lastSec = f.sec;
       }
@@ -421,8 +421,9 @@
         h(
           'header',
           { class: 'ex-head' },
-          h('div', { class: 'sec-chip' }, h('span', null, meta.emoji), h('span', null, (sec.title || meta.name) + ' · ' + secIdx + '/' + sec.exercises.length)),
+          h('div', { class: 'chip-row' }, h('div', { class: 'sec-chip' }, h('span', null, meta.emoji), h('span', null, (sec.title || meta.name) + ' · ' + secIdx + '/' + sec.exercises.length)), meta.homework ? h('span', { class: 'hw-chip' }, '🏠 Homework') : null),
           h('h2', { class: 'ex-title' }, ex.title || ''),
+          meta.homework ? h('p', { class: 'hw-note' }, '🏠 Це домашнє завдання: виконай його після уроку, у зручний час. Текст зберігається автоматично.') : null,
           ex.instructions ? h('p', { class: 'ex-instr' }, ex.instructions) : null
         ),
         ex.passage ? renderPassage(ex.passage) : null,
@@ -464,7 +465,7 @@
             return h(
               'div',
               { class: 'sum-item sec-' + s.sec.id },
-              h('div', { class: 'sum-name' }, meta.emoji + ' ' + (s.sec.title || meta.name)),
+              h('div', { class: 'sum-name' }, meta.emoji + ' ' + (s.sec.title || meta.name) + (meta.homework ? ' · Homework' : '')),
               h('div', { class: 'sum-val' }, s.done + ' / ' + s.n + ' вправ'),
               s.tot ? h('div', { class: 'muted small' }, 'Бали: ' + s.score + ' / ' + s.tot) : null,
               h('div', { class: 'progress' }, h('span', { style: { width: (s.n ? (s.done / s.n) * 100 : 0) + '%' } }))
