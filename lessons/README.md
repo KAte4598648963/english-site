@@ -25,6 +25,7 @@
 | `match` | `pairs: [['journey', 'подорож'], …]` |
 | `order` | `items: [{ id, prompt, answer: 'Full sentence.', extra?: ['зайве'] }]` |
 | `flashcards` | `cards: [{ front, back, ipa?, example? }]` |
+| `sort` | `columns: [{ title, ua?, items: ['word', …] }, …]` — розкласти слова по 2–3 колонках |
 | `dictation` | `items: [{ id, text }]` |
 | `writing` | `prompt, minWords, maxWords, phrases[], checklist[], model` |
 | `speaking` | `tasks: [{ id, q, tips?, model? }], phrases[]` |

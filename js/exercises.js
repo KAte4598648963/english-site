@@ -312,6 +312,106 @@
     }
   };
 
+  /* ---------------- Sort into columns (tap a word, then a column; or drag) ---------------- */
+  T.sort = {
+    render(ex, api) {
+      const st = api.state;
+      st.answers = st.answers || {}; // word index -> column index
+      const words = [];
+      ex.columns.forEach((col, ci) => col.items.forEach((w) => words.push({ w, ci })));
+      let selected = null;
+
+      const chips = words.map((wd, wi) => {
+        const c = h('button', { class: 'chip', type: 'button', draggable: 'true' }, wd.w);
+        c.addEventListener('click', (e) => {
+          e.stopPropagation();
+          if (st.checked) return;
+          if (st.answers[wi] != null && selected != null && selected !== wi) {
+            st.answers[selected] = st.answers[wi]; // tapped a placed word while holding another → drop into that column
+            selected = null;
+            api.save();
+          } else if (st.answers[wi] != null) {
+            delete st.answers[wi];
+            selected = null;
+            api.save();
+          } else selected = selected === wi ? null : wi;
+          paint();
+        });
+        c.addEventListener('dragstart', (e) => {
+          if (st.checked) return e.preventDefault();
+          e.dataTransfer.setData('text/plain', String(wi));
+        });
+        return c;
+      });
+      const order = ENG.shuffle(words.map((_, i) => i), ex.id);
+      const bank = h('div', { class: 'bank' });
+
+      const cols = ex.columns.map((col, ci) => {
+        const body = h('div', { class: 'sort-body' });
+        const el = h('div', { class: 'sort-col' }, h('div', { class: 'sort-title' }, col.title, col.ua ? h('span', { class: 'muted' }, ' · ' + col.ua) : null), body);
+        el.addEventListener('click', () => {
+          if (st.checked || selected == null) return;
+          st.answers[selected] = ci;
+          selected = null;
+          api.save();
+          paint();
+        });
+        el.addEventListener('dragover', (e) => {
+          if (st.checked) return;
+          e.preventDefault();
+          el.classList.add('over');
+        });
+        el.addEventListener('dragleave', () => el.classList.remove('over'));
+        el.addEventListener('drop', (e) => {
+          e.preventDefault();
+          el.classList.remove('over');
+          const wi = parseInt(e.dataTransfer.getData('text/plain'), 10);
+          if (isNaN(wi) || st.checked) return;
+          st.answers[wi] = ci;
+          selected = null;
+          api.save();
+          paint();
+        });
+        return { el, body };
+      });
+
+      function paint() {
+        bank.innerHTML = '';
+        cols.forEach((c) => (c.body.innerHTML = ''));
+        order.forEach((wi) => {
+          const c = chips[wi];
+          const ci = st.answers[wi];
+          c.classList.toggle('selected', selected === wi);
+          c.classList.remove('right', 'wrong');
+          c.title = '';
+          if (st.checked && ci != null) {
+            const ok = ci === words[wi].ci;
+            c.classList.add(ok ? 'right' : 'wrong');
+            if (!ok) c.title = 'Правильно: ' + ex.columns[words[wi].ci].title;
+          }
+          c.disabled = !!st.checked;
+          (ci == null ? bank : cols[ci].body).appendChild(c);
+        });
+        bank.classList.toggle('empty', bank.children.length === 0);
+        cols.forEach((c) => c.el.classList.toggle('target', selected != null));
+      }
+      paint();
+      const key = h(
+        'div',
+        { class: 't-hint sort-key' },
+        ex.columns.map((col) => h('div', null, h('b', null, col.title + ': '), col.items.join(', ')))
+      );
+      return {
+        el: h('div', { class: 'ex-sort' }, h('div', { class: 'bank-label' }, 'Натисни на слово, а потім на колонку (або перетягни). Натисни на слово в колонці, щоб повернути його.'), bank, h('div', { class: 'sort-cols' }, cols.map((c) => c.el)), key),
+        ready: () => words.every((_, wi) => st.answers[wi] != null),
+        check() {
+          paint();
+          return { score: words.filter((wd, wi) => st.answers[wi] === wd.ci).length, total: words.length };
+        }
+      };
+    }
+  };
+
   /* ---------------- Match pairs (Quizlet-style, instant feedback) ---------------- */
   T.match = {
     render(ex, api) {

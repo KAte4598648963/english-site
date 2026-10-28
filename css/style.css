@@ -447,6 +447,16 @@ body, .lvl, .level-card { --lc: var(--lvl-b1); }
 .chip:hover:not(:disabled) { border-color: var(--sc); }
 .chip.selected { border-color: var(--primary); background: var(--primary-soft); color: var(--primary); transform: translateY(-2px); }
 .chip.used { opacity: 0.3; cursor: default; }
+.sort-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+@media (max-width: 520px) { .sort-cols { gap: 8px; } }
+.sort-col { min-height: 150px; padding: 12px; border-radius: 14px; background: var(--surface-2); border: 1.5px dashed var(--border-strong); transition: border-color 0.15s, background 0.15s; }
+.sort-col.target, .sort-col.over { border-color: var(--primary); background: var(--primary-soft); cursor: pointer; }
+.sort-title { font-weight: 700; margin-bottom: 10px; }
+.sort-body { display: flex; flex-wrap: wrap; gap: 6px; }
+.bank.empty { display: none; }
+.chip.right { border-color: var(--ok); background: var(--ok-soft); color: var(--ok); opacity: 1; }
+.chip.wrong { border-color: var(--bad); background: var(--bad-soft); color: var(--bad); opacity: 1; }
+.sort-key { margin-top: 12px; font-size: 0.9rem; }
 .drop {
   display: inline-block; min-width: 92px; min-height: 34px; vertical-align: middle; padding: 3px 12px; margin: 0 3px; border-radius: 10px; cursor: pointer;
   border: 2px dashed var(--border-strong); background: var(--surface-2); font-weight: 600; color: var(--primary); line-height: 1.5;

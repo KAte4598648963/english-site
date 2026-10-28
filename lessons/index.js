@@ -62,6 +62,15 @@ window.ENG.registry = [
         ]
       },
       {
+        id: 'module-4-1',
+        num: '4.1',
+        title: 'Review A1',
+        ua: 'Повторення A1',
+        lessons: [
+          { id: 'a1-m41-l1', slug: 'lesson-1', title: 'Review A1: Grammar', ua: 'there is/are · Present Simple vs Continuous · countable/uncountable · -s/-es/-ies', file: 'lessons/a1/a1-m41-l1.js' }
+        ]
+      },
+      {
         id: 'module-5',
         num: 5,
         title: 'Free Time',
