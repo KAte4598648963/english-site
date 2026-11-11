@@ -93,6 +93,15 @@ window.ENG.registry = [
           { id: 'a1-m6-l3', slug: 'lesson-3', title: 'My first trip', ua: 'неправильні дієслова, did / didn’t', file: 'lessons/a1/a1-m6-l3.js' },
           { id: 'a1-m6-l4', slug: 'lesson-4', title: 'Review A1: My English story', ua: 'Підсумкове повторення A1', file: 'lessons/a1/a1-m6-l4.js' }
         ]
+      },
+      {
+        id: 'module-7',
+        num: 7,
+        title: 'Watch & Talk',
+        ua: 'Відео-уроки',
+        lessons: [
+          { id: 'a1-m7-l1', slug: 'lesson-1', title: 'What is he doing? Mr Bean 🎬', ua: 'відео · Present Continuous (повторення) · with', file: 'lessons/a1/a1-m7-l1.js' }
+        ]
       }
     ]
   },

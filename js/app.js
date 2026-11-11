@@ -427,6 +427,7 @@
           ex.instructions ? h('p', { class: 'ex-instr' }, ex.instructions) : null
         ),
         ex.passage ? renderPassage(ex.passage) : null,
+        ex.video ? renderVideo(ex.video) : null,
         ex.audio ? renderAudio(ex.audio, !!state.checked) : null,
         h('div', { class: 'ex-body' }, r.el),
         h('footer', { class: 'ex-foot' }, result, actions)
@@ -493,6 +494,34 @@
         { class: 'passage', open: true },
         h('summary', null, ENG.icon('eye'), p.title || 'Text'),
         h('div', { class: 'passage-text' }, String(p.text).split(/\n\s*\n/).map((para) => h('p', null, para.trim())))
+      );
+    }
+
+    /* YouTube video: ex.video = { youtube: 'VIDEO_ID', title?, start?, end? } */
+    function renderVideo(v) {
+      const id = String(v.youtube || '').replace(/[^\w-]/g, '');
+      if (!id) return null;
+      const q = ['rel=0', 'modestbranding=1', 'playsinline=1'];
+      if (v.start) q.push('start=' + parseInt(v.start, 10));
+      if (v.end) q.push('end=' + parseInt(v.end, 10));
+      const watch = 'https://www.youtube.com/watch?v=' + id + (v.start ? '&t=' + parseInt(v.start, 10) + 's' : '');
+      return h(
+        'details',
+        { class: 'passage video-box', open: true },
+        h('summary', null, h('span', { class: 'video-emoji' }, '🎬'), v.title || 'Video'),
+        h(
+          'div',
+          { class: 'video-frame' },
+          h('iframe', {
+            src: 'https://www.youtube-nocookie.com/embed/' + id + '?' + q.join('&'),
+            title: v.title || 'YouTube video',
+            loading: 'lazy',
+            allow: 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share',
+            allowfullscreen: 'true',
+            referrerpolicy: 'strict-origin-when-cross-origin'
+          })
+        ),
+        h('div', { class: 'video-foot muted small' }, 'Відео не грає? ', h('a', { href: watch, target: '_blank', rel: 'noopener' }, 'Відкрити на YouTube ↗'))
       );
     }
 
