@@ -69,6 +69,30 @@
     }
   };
 
+  /* ---------------- Video watch step (video itself comes from ex.video) ----------------
+   * fields: notice?: ['What to look for…'], button?: 'text' */
+  T.video = {
+    render(ex, api) {
+      const st = api.state;
+      const btn = h(
+        'button',
+        {
+          class: 'btn btn-primary',
+          type: 'button',
+          onclick: (e) => {
+            e.currentTarget.parentNode.remove();
+            api.finish(1, 1);
+          }
+        },
+        ENG.icon('check'),
+        ex.button || 'Я подивився(-лась)!'
+      );
+      const notice = ex.notice && ex.notice.length ? h('ul', { class: 'video-notice' }, ex.notice.map((n) => h('li', null, n))) : null;
+      const el = h('div', { class: 'ex-rule ex-video' }, notice, st.done ? null : h('div', { class: 'rule-actions' }, btn));
+      return { el, noRetry: true };
+    }
+  };
+
   /* ---------------- Multiple choice ---------------- */
   T.choice = {
     render(ex, api) {

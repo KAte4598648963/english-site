@@ -13,10 +13,11 @@
 `sections: [{ id: 'reading' | 'vocabulary' | 'grammar' | 'listening' | 'writing' | 'speaking', title, exercises: [...] }]`
 
 ## Типи вправ
-Спільні поля: `id`, `type`, `title`, `instructions`, опційно `passage: { title, text }` (текст для читання) та `audio: { title, lines: [{ who, text }] }` (озвучення браузером).
+Спільні поля: `id`, `type`, `title`, `instructions`, опційно `passage: { title, text }` (текст для читання), `audio: { title, lines: [{ who, text }] }` (озвучення браузером) та `video: { youtube: 'VIDEO_ID', title, start?, end? }` (вбудоване відео YouTube над вправою; `start`/`end` — у секундах). Зразок відео-уроку — `a1/a1-m7-l1.js`.
 
 | type | поля |
 |---|---|
+| `video` | крок «просто подивись»: `video`, опційно `notice: ['на що звернути увагу']`, `button` |
 | `rule` | `html` — теорія (таблиці, `.ex-line`, `.tip`, `<mark>`) |
 | `choice` | `items: [{ id, q, options: [], answer: <index>, explain? }]` |
 | `truefalse` | `items: [{ id, s, answer: true/false, explain? }]` |
