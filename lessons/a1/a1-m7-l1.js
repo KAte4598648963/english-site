@@ -26,6 +26,66 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
 
     sections: [
       {
+        id: 'listening',
+        title: 'Video',
+        exercises: [
+          {
+            id: 'video-watch',
+            type: 'video',
+            title: '🎬 Just watch and laugh',
+            instructions: 'Перший перегляд — просто для задоволення. Слів майже немає, тож нічого перекладати не треба! Під час перегляду зверни увагу:',
+            video: VIDEO,
+            notice: ['What food has Mr Bean got?', 'What strange things is he using?', 'What happens at the end?'],
+            button: 'Подивився(-лась)! 😂'
+          },
+          {
+            id: 'video-gist',
+            type: 'choice',
+            title: 'What did you see?',
+            instructions: 'Легкі питання після першого перегляду. Можеш дивитися відео ще раз скільки завгодно.',
+            video: VIDEO,
+            items: [
+              { id: 'v1', q: 'Where is Mr Bean?', options: ['In a kitchen', 'In a park', 'In a café'], answer: 1 },
+              { id: 'v2', q: 'What is he making?', options: ['A cake', 'A sandwich', 'A pizza'], answer: 1 },
+              { id: 'v3', q: 'Where are the food and things?', options: ['In his bag', 'In his car', 'In his coat'], answer: 2, explain: 'Він дістає все з кишень пальта — як фокусник! 🎩' },
+              { id: 'v4', q: 'Who is sitting next to him?', options: ['A man', 'A dog', 'His teddy bear'], answer: 0 },
+              { id: 'v5', q: 'What is he drinking?', options: ['Coffee', 'Juice', 'Tea'], answer: 2 }
+            ]
+          },
+          {
+            id: 'video-tools',
+            type: 'dragdrop',
+            title: 'Crazy tools 🤪',
+            instructions: 'Мр Бін використовує дуже дивні речі! Подивись ще раз і встав слово. Два слова зайві — це те, що використала б звичайна людина 😉',
+            video: VIDEO,
+            items: [
+              { id: 't1', text: 'He is cutting the bread with {{scissors}}.' },
+              { id: 't2', text: 'He is putting butter on the bread with a {{credit card}}.' },
+              { id: 't3', text: 'He is washing the lettuce in the fountain and drying it with his {{sock}}.' },
+              { id: 't4', text: 'He is crushing the pepper with his {{shoe}}.' },
+              { id: 't5', text: 'He is making tea in a {{hot water bottle}}.' }
+            ],
+            distractors: ['knife', 'towel']
+          },
+          {
+            id: 'video-lie',
+            type: 'truefalse',
+            title: 'Spot the lie 🕵️',
+            instructions: 'Детектив, увага! Які речення про відео — правда, а які — брехня?',
+            video: VIDEO,
+            items: [
+              { id: 'l1', s: 'Mr Bean is cutting the bread with a knife.', answer: false, explain: 'Ні — ножицями! ✂️' },
+              { id: 'l2', s: 'He is washing the lettuce in the fountain.', answer: true },
+              { id: 'l4', s: 'The man on the bench is watching Mr Bean.', answer: true, explain: 'Так, і дуже здивовано 😳' },
+              { id: 'l3', s: 'He is talking a lot to the man.', answer: false, explain: 'Мр Бін майже не говорить — у цьому вся фішка!' },
+              { id: 'l6', s: 'The pepper makes him sneeze.', answer: true, explain: 'Atchoo! 🤧' },
+              { id: 'l5', s: 'Mr Bean is drinking coffee from a cup.', answer: false, explain: 'Він робить чай у грілці!' }
+            ]
+          }
+        ]
+      },
+
+      {
         id: 'reading',
         title: 'Reading',
         exercises: [
@@ -36,11 +96,11 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
             instructions: 'Прочитай короткий текст про героя нашого відео й обери відповідь. Тут усе знайоме! 🙂',
             passage: PASSAGE,
             items: [
-              { id: 'q1', q: 'Where is Mr Bean from?', options: ['American films', 'British TV', 'A book'], answer: 1 },
+              { id: 'q1', q: 'Where is Mr Bean from?', options: ['American films', 'A book', 'British TV'], answer: 2 },
               { id: 'q2', q: 'What does he usually wear?', options: ['A brown jacket and a red tie', 'A black T-shirt', 'A blue coat and a hat'], answer: 0 },
               { id: 'q3', q: 'Does he talk a lot?', options: ['Yes, he does.', 'No, he doesn’t.'], answer: 1 },
-              { id: 'q4', q: 'Who is his best friend?', options: ['His cat', 'His teddy bear', 'His car'], answer: 1 },
-              { id: 'q5', q: 'Where is he in today’s video?', options: ['At home', 'In a park', 'In a shop'], answer: 1 }
+              { id: 'q4', q: 'Who is his best friend?', options: ['His cat', 'His car', 'His teddy bear'], answer: 2 },
+              { id: 'q5', q: 'Where is he in today’s video?', options: ['In a park', 'At home', 'In a shop'], answer: 0 }
             ]
           }
         ]
@@ -94,66 +154,6 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
             columns: [
               { title: 'Food & drink 🍽', ua: 'їжа і напої', items: ['bread', 'butter', 'lettuce', 'pepper', 'tea', 'milk'] },
               { title: 'Not food 🙅', ua: 'не їжа', items: ['scissors', 'a sock', 'a shoe', 'a credit card', 'a hot water bottle', 'a bench'] }
-            ]
-          }
-        ]
-      },
-
-      {
-        id: 'listening',
-        title: 'Video',
-        exercises: [
-          {
-            id: 'video-watch',
-            type: 'video',
-            title: '🎬 Just watch and laugh',
-            instructions: 'Перший перегляд — просто для задоволення. Слів майже немає, тож нічого перекладати не треба! Під час перегляду зверни увагу:',
-            video: VIDEO,
-            notice: ['What food has Mr Bean got?', 'What strange things is he using?', 'What happens at the end?'],
-            button: 'Подивився(-лась)! 😂'
-          },
-          {
-            id: 'video-gist',
-            type: 'choice',
-            title: 'What did you see?',
-            instructions: 'Легкі питання після першого перегляду. Можеш дивитися відео ще раз скільки завгодно.',
-            video: VIDEO,
-            items: [
-              { id: 'v1', q: 'Where is Mr Bean?', options: ['In a park', 'In a kitchen', 'In a café'], answer: 0 },
-              { id: 'v2', q: 'What is he making?', options: ['A cake', 'A sandwich', 'A pizza'], answer: 1 },
-              { id: 'v3', q: 'Where are the food and things?', options: ['In his bag', 'In his car', 'In his coat'], answer: 2, explain: 'Він дістає все з кишень пальта — як фокусник! 🎩' },
-              { id: 'v4', q: 'Who is sitting next to him?', options: ['A man', 'A dog', 'His teddy bear'], answer: 0 },
-              { id: 'v5', q: 'What is he drinking?', options: ['Coffee', 'Juice', 'Tea'], answer: 2 }
-            ]
-          },
-          {
-            id: 'video-tools',
-            type: 'dragdrop',
-            title: 'Crazy tools 🤪',
-            instructions: 'Мр Бін використовує дуже дивні речі! Подивись ще раз і встав слово. Два слова зайві — це те, що використала б звичайна людина 😉',
-            video: VIDEO,
-            items: [
-              { id: 't1', text: 'He is cutting the bread with {{scissors}}.' },
-              { id: 't2', text: 'He is putting butter on the bread with a {{credit card}}.' },
-              { id: 't3', text: 'He is washing the lettuce in the fountain and drying it with his {{sock}}.' },
-              { id: 't4', text: 'He is crushing the pepper with his {{shoe}}.' },
-              { id: 't5', text: 'He is making tea in a {{hot water bottle}}.' }
-            ],
-            distractors: ['knife', 'towel']
-          },
-          {
-            id: 'video-lie',
-            type: 'truefalse',
-            title: 'Spot the lie 🕵️',
-            instructions: 'Детектив, увага! Які речення про відео — правда, а які — брехня?',
-            video: VIDEO,
-            items: [
-              { id: 'l1', s: 'Mr Bean is cutting the bread with a knife.', answer: false, explain: 'Ні — ножицями! ✂️' },
-              { id: 'l2', s: 'He is washing the lettuce in the fountain.', answer: true },
-              { id: 'l3', s: 'He is talking a lot to the man.', answer: false, explain: 'Мр Бін майже не говорить — у цьому вся фішка!' },
-              { id: 'l4', s: 'The man on the bench is watching Mr Bean.', answer: true, explain: 'Так, і дуже здивовано 😳' },
-              { id: 'l5', s: 'Mr Bean is drinking coffee from a cup.', answer: false, explain: 'Він робить чай у грілці!' },
-              { id: 'l6', s: 'The pepper makes him sneeze.', answer: true, explain: 'Atchoo! 🤧' }
             ]
           }
         ]
@@ -227,11 +227,11 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
             instructions: 'Уяви, що ставиш відео на паузу. Обери правильне речення.',
             items: [
               { id: 'f1', q: 'Пауза! Що робить Мр Бін?', options: ['He washing the lettuce.', 'He is washing the lettuce.', 'He is wash the lettuce.'], answer: 1 },
-              { id: 'f2', q: '___ he making a sandwich? — Yes, he is.', options: ['Does', 'Is', 'Are'], answer: 1 },
-              { id: 'f3', q: 'What ___ they doing?', options: ['is', 'are', 'am'], answer: 1 },
+              { id: 'f2', q: '___ he making a sandwich? — Yes, he is.', options: ['Does', 'Are', 'Is'], answer: 2 },
+              { id: 'f3', q: 'What ___ they doing?', options: ['are', 'is', 'am'], answer: 0 },
               { id: 'f4', q: 'Is the man sneezing? — No, he ___.', options: ['isn’t', 'doesn’t', 'aren’t'], answer: 0 },
               { id: 'f5', q: 'He is crushing the pepper ___ his shoe.', options: ['on', 'with', 'in'], answer: 1 },
-              { id: 'f6', q: 'Look! It ___!', options: ['is raining', 'rains', 'raining'], answer: 0, explain: 'Look! → зараз → Present Continuous.' }
+              { id: 'f6', q: 'Look! It ___!', options: ['rains', 'raining', 'is raining'], answer: 2, explain: 'Look! → зараз → Present Continuous.' }
             ]
           },
           {
