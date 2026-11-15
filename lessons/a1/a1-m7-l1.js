@@ -131,19 +131,17 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
             ]
           },
           {
-            id: 'vocab-emoji',
+            id: 'vocab-tools',
             type: 'match',
-            title: 'Emoji match',
-            instructions: 'Поєднай слово з емодзі. Швидко, як у грі! ⚡',
+            title: 'What is it for? 🤔',
+            instructions: 'Мр Бін використовує речі не за призначенням! Поєднай річ із тим, що він нею робить у відео.',
             pairs: [
-              ['bread', '🍞'],
-              ['scissors', '✂️'],
-              ['a sock', '🧦'],
-              ['a shoe', '👞'],
-              ['lettuce', '🥬'],
-              ['tea', '🍵'],
-              ['a credit card', '💳'],
-              ['sneeze', '🤧']
+              ['scissors', 'to cut the bread'],
+              ['a credit card', 'to put butter on the bread'],
+              ['the fountain', 'to wash the lettuce'],
+              ['a sock', 'to dry the lettuce'],
+              ['a hot water bottle', 'to make tea'],
+              ['a handkerchief', 'to put around his neck']
             ]
           },
           {
@@ -312,7 +310,7 @@ A woman is looking at me. She is laughing. Two dogs are watching my sandwich. Th
       'jacket': 'піджак', 'red': 'червоний', 'tie': 'краватка', "doesn't": 'не', 'talk': 'говорити', 'a lot': 'багато', 'makes': 'робить',
       'faces': 'обличчя; гримаси', 'strange': 'дивний', 'things': 'речі', "that's why": 'ось чому', 'people': 'люди', 'all over the world': 'по всьому світу',
       'love': 'любити', 'need': 'потребувати', 'understand': 'розуміти', 'small': 'маленький', 'green': 'зелений', 'car': 'машина',
-      'teddy bear': 'плюшевий ведмедик', 'teddy': 'ведмедик', 'handkerchief': 'носова хустинка', 'neck': 'шия', 'ready': 'готовий', 'best friend': 'найкращий друг', 'today': 'сьогодні', 'video': 'відео', 'park': 'парк',
+      'teddy bear': 'плюшевий ведмедик', 'teddy': 'ведмедик', 'for': 'для', 'around': 'навколо', 'handkerchief': 'носова хустинка', 'neck': 'шия', 'ready': 'готовий', 'best friend': 'найкращий друг', 'today': 'сьогодні', 'video': 'відео', 'park': 'парк',
       'lunchtime': 'час обіду', 'hungry': 'голодний', 'where': 'де', 'from': 'з', 'american': 'американський', 'films': 'фільми', 'book': 'книга',
       'black': 'чорний', 't-shirt': 'футболка', 'blue': 'синій', 'coat': 'пальто', 'hat': 'капелюх', 'cat': 'кіт', 'home': 'дім', 'shop': 'магазин',
       'picnic': 'пікнік', 'bench': 'лавка', 'park bench': 'лавка в парку', 'lunch': 'обід', 'bread': 'хліб', 'butter': 'вершкове масло', 'lettuce': 'салат (листя)',
