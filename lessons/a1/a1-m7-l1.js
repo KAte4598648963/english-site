@@ -35,7 +35,7 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
             title: '🎬 Just watch and laugh',
             instructions: 'Перший перегляд — просто для задоволення. Слів майже немає, тож нічого перекладати не треба! Під час перегляду зверни увагу:',
             video: VIDEO,
-            notice: ['What food has Mr Bean got?', 'What strange things is he using?', 'What is the man next to him doing?'],
+            notice: ['Where is Mr Bean?', 'What is he wearing?', 'What food has Mr Bean got?', 'What strange things is he using?', 'What is the man next to him doing?'],
             button: 'Подивився(-лась)! 😂'
           },
           {
