@@ -172,6 +172,12 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
 <div class="ex-line">Look! He <mark>is cutting</mark> the bread. — Дивись! Він ріже хліб.</div>
 <div class="ex-line">The man <mark>is watching</mark> him. — Чоловік на нього дивиться.</div>
 
+<div class="tip">💡 <b>Нагадай собі!</b><br>
+<b>Is</b> he eat<b>ing</b> right now? — Yes, he <b>is</b>. / No, he <b>isn’t</b>.<br>
+<b>Are</b> you cutt<b>ing</b> bread right now? — Yes, I <b>am</b>. / No, I<b>’m not</b>.<br>
+<b>Am</b> I prepar<b>ing</b> sandwiches right now? — Yes, you <b>are</b>. / No, you <b>aren’t</b>.<br>
+<b>Are</b> they sitt<b>ing</b> on a bench? — Yes, they <b>are</b>. / No, they <b>aren’t</b>.</div>
+
 <h3>2. Як утворюється: формули</h3>
 <p class="formula-legend"><span class="f-s">Підмет</span> <span class="f-aux">am / is / are</span> <span class="f-v">V-ing</span> <span class="f-neg">not</span></p>
 <div class="table-wrap"><table class="ftable">
@@ -310,7 +316,7 @@ A woman is looking at me. She is laughing. Two dogs are watching my sandwich. Th
       'jacket': 'піджак', 'red': 'червоний', 'tie': 'краватка', "doesn't": 'не', 'talk': 'говорити', 'a lot': 'багато', 'makes': 'робить',
       'faces': 'обличчя; гримаси', 'strange': 'дивний', 'things': 'речі', "that's why": 'ось чому', 'people': 'люди', 'all over the world': 'по всьому світу',
       'love': 'любити', 'need': 'потребувати', 'understand': 'розуміти', 'small': 'маленький', 'green': 'зелений', 'car': 'машина',
-      'teddy bear': 'плюшевий ведмедик', 'teddy': 'ведмедик', 'for': 'для', 'around': 'навколо', 'handkerchief': 'носова хустинка', 'neck': 'шия', 'ready': 'готовий', 'best friend': 'найкращий друг', 'today': 'сьогодні', 'video': 'відео', 'park': 'парк',
+      'teddy bear': 'плюшевий ведмедик', 'teddy': 'ведмедик', 'preparing': 'готую', 'sandwiches': 'бутерброди', 'for': 'для', 'around': 'навколо', 'handkerchief': 'носова хустинка', 'neck': 'шия', 'ready': 'готовий', 'best friend': 'найкращий друг', 'today': 'сьогодні', 'video': 'відео', 'park': 'парк',
       'lunchtime': 'час обіду', 'hungry': 'голодний', 'where': 'де', 'from': 'з', 'american': 'американський', 'films': 'фільми', 'book': 'книга',
       'black': 'чорний', 't-shirt': 'футболка', 'blue': 'синій', 'coat': 'пальто', 'hat': 'капелюх', 'cat': 'кіт', 'home': 'дім', 'shop': 'магазин',
       'picnic': 'пікнік', 'bench': 'лавка', 'park bench': 'лавка в парку', 'lunch': 'обід', 'bread': 'хліб', 'butter': 'вершкове масло', 'lettuce': 'салат (листя)',
