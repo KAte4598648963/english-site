@@ -1,11 +1,11 @@
 /*
  * A1 · Module 7 · Lesson 1 — What is he doing? (Mr Bean video lesson)
- * Easy review lesson: Present Continuous (module 5) + "with" for tools. Video: Mr Bean Official, "Sandwich Making"
+ * Easy review lesson: Present Continuous (module 5) + "with" for tools. Video: media/a1/mr-bean-sandwich.mp4 (owner’s screen recording)
  * (park sandwich scene from Episode 3, “The Curse of Mr Bean”).
  * Exercise IDs are PERMANENT.
  */
 (function () {
-  const VIDEO = { youtube: 'bS1ePEZZCDY', title: 'Mr Bean: Sandwich Making (Mr Bean Official)' };
+  const VIDEO = { src: 'media/a1/mr-bean-sandwich.mp4', poster: 'media/a1/mr-bean-sandwich.jpg', title: 'Mr Bean: Lunch in the park' };
 
   const PASSAGE = {
     title: 'Who is Mr Bean?',
@@ -35,7 +35,7 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
             title: '🎬 Just watch and laugh',
             instructions: 'Перший перегляд — просто для задоволення. Слів майже немає, тож нічого перекладати не треба! Під час перегляду зверни увагу:',
             video: VIDEO,
-            notice: ['What food has Mr Bean got?', 'What strange things is he using?', 'What happens at the end?'],
+            notice: ['What food has Mr Bean got?', 'What strange things is he using?', 'What is the man next to him doing?'],
             button: 'Подивився(-лась)! 😂'
           },
           {
@@ -78,7 +78,7 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
               { id: 'l2', s: 'He is washing the lettuce in the fountain.', answer: true },
               { id: 'l4', s: 'The man on the bench is watching Mr Bean.', answer: true, explain: 'Так, і дуже здивовано 😳' },
               { id: 'l3', s: 'He is talking a lot to the man.', answer: false, explain: 'Мр Бін майже не говорить — у цьому вся фішка!' },
-              { id: 'l6', s: 'The pepper makes him sneeze.', answer: true, explain: 'Atchoo! 🤧' },
+              { id: 'l7', s: 'At the end, he is putting a handkerchief around his neck.', answer: true, explain: 'Так — як серветку, щоб не забруднитися 😄' },
               { id: 'l5', s: 'Mr Bean is drinking coffee from a cup.', answer: false, explain: 'Він робить чай у грілці!' }
             ]
           }
@@ -264,7 +264,7 @@ In today’s video, Mr Bean is in a park. It’s lunchtime and he is very hungry
               { id: 'sp1', q: 'The start: where is he? What is he doing?', tips: 'He is sitting… He is taking … out of his coat.', model: 'Mr Bean is in the park. He is sitting on a bench. He is taking bread out of his coat.' },
               { id: 'sp2', q: 'The middle: describe 3 crazy things he is doing.', tips: 'He is cutting… with… / He is washing… / He is drying…', model: 'He is cutting the bread with scissors. He is washing the lettuce in the fountain. Now he is drying it with his sock!' },
               { id: 'sp3', q: 'What is the man on the bench doing? How does he feel?', tips: 'He is watching… He is surprised.', model: 'The man is eating his sandwich. He is watching Mr Bean. He is very surprised!' },
-              { id: 'sp4', q: 'The end: what happens?', tips: 'He is sneezing… The man is giving…', model: 'The pepper makes him sneeze. Oh no! Now he hasn’t got a sandwich. The man is giving him half of his sandwich. That’s nice!' }
+              { id: 'sp5', q: 'The end: what is he doing with the hot water bottle and the handkerchief?', tips: 'He is making tea in… He is putting the handkerchief…', model: 'He is making tea in a hot water bottle! Now he is putting a handkerchief around his neck. He is ready to eat.' }
             ]
           },
           {
@@ -312,7 +312,7 @@ A woman is looking at me. She is laughing. Two dogs are watching my sandwich. Th
       'jacket': 'піджак', 'red': 'червоний', 'tie': 'краватка', "doesn't": 'не', 'talk': 'говорити', 'a lot': 'багато', 'makes': 'робить',
       'faces': 'обличчя; гримаси', 'strange': 'дивний', 'things': 'речі', "that's why": 'ось чому', 'people': 'люди', 'all over the world': 'по всьому світу',
       'love': 'любити', 'need': 'потребувати', 'understand': 'розуміти', 'small': 'маленький', 'green': 'зелений', 'car': 'машина',
-      'teddy bear': 'плюшевий ведмедик', 'teddy': 'ведмедик', 'best friend': 'найкращий друг', 'today': 'сьогодні', 'video': 'відео', 'park': 'парк',
+      'teddy bear': 'плюшевий ведмедик', 'teddy': 'ведмедик', 'handkerchief': 'носова хустинка', 'neck': 'шия', 'ready': 'готовий', 'best friend': 'найкращий друг', 'today': 'сьогодні', 'video': 'відео', 'park': 'парк',
       'lunchtime': 'час обіду', 'hungry': 'голодний', 'where': 'де', 'from': 'з', 'american': 'американський', 'films': 'фільми', 'book': 'книга',
       'black': 'чорний', 't-shirt': 'футболка', 'blue': 'синій', 'coat': 'пальто', 'hat': 'капелюх', 'cat': 'кіт', 'home': 'дім', 'shop': 'магазин',
       'picnic': 'пікнік', 'bench': 'лавка', 'park bench': 'лавка в парку', 'lunch': 'обід', 'bread': 'хліб', 'butter': 'вершкове масло', 'lettuce': 'салат (листя)',

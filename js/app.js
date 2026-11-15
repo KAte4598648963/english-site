@@ -497,8 +497,18 @@
       );
     }
 
-    /* YouTube video: ex.video = { youtube: 'VIDEO_ID', title?, start?, end? } */
+    /* Video: ex.video = { src: 'media/…/file.mp4', poster?, title? }  — own file hosted with the site
+     *     or ex.video = { youtube: 'VIDEO_ID', title?, start?, end? } — YouTube embed */
     function renderVideo(v) {
+      if (v.src) {
+        return h(
+          'details',
+          { class: 'passage video-box', open: true },
+          h('summary', null, h('span', { class: 'video-emoji' }, '🎬'), v.title || 'Video'),
+          h('div', { class: 'video-frame' }, h('video', { src: v.src, poster: v.poster || null, controls: true, playsinline: true, preload: 'metadata' })),
+          h('div', { class: 'video-foot' })
+        );
+      }
       const id = String(v.youtube || '').replace(/[^\w-]/g, '');
       if (!id) return null;
       const q = ['rel=0', 'modestbranding=1', 'playsinline=1'];
