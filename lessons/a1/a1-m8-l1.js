@@ -349,12 +349,19 @@ I like this weather! What’s the weather like in London? Is it raining again? �
             id: 'speak-roulette',
             type: 'speaking',
             title: 'Weather roulette 🎲',
-            instructions: 'Кинь кубик (або попроси викладача назвати число від 1 до 6). Число визначає, де ти зараз і яка там погода. Уяви, що ти там, і розкажи! Потім — гра у вгадування.',
+            instructions: 'Натисни на кубик! Число визначає, де ти зараз і яка там погода. Уяви, що ти там, і розкажи! Потім — гра у вгадування.',
+            dice: {
+              results: [
+                { n: [1, 2], text: 'London — it’s raining cats and dogs! ☔' },
+                { n: [3, 4], text: 'Kyiv — it’s freezing and snowing! ❄️' },
+                { n: [5, 6], text: 'Barcelona — it’s boiling hot! ☀️' }
+              ]
+            },
             phrases: ['I’m in… It’s…', 'Right now it’s raining / snowing…', 'People are…ing', 'I’m wearing…', 'I’m taking… because…', 'It usually…'],
             tasks: [
-              { id: 'r1', q: '🎲 1–2: London — it’s raining cats and dogs. 3–4: Kyiv — it’s freezing and snowing. 5–6: Barcelona — it’s boiling hot. Where are you? Describe the weather and what people in the street are doing.', tips: 'I’m in… It’s… People are… Some children are…', model: 'I’m in Kyiv. It’s minus ten and it’s snowing. People are walking fast. Some children are making a snowman.' },
+              { id: 'r1', q: 'Roll the dice! Where are you? Describe the weather and what people in the street are doing.', tips: 'I’m in… It’s… People are… Some children are…', model: 'I’m in Kyiv. It’s minus ten and it’s snowing. People are walking fast. Some children are making a snowman.' },
               { id: 'r2', q: 'Pack your bag! You are flying to this city tomorrow. Name 3 things you are taking and say why.', tips: 'I’m taking… because it’s… / Don’t forget your…', model: 'I’m taking my boots because it’s icy. I’m taking a warm scarf because it’s freezing. And hot tea!' },
-              { id: 'r3', q: 'Roll again! Now you are a tourist there. Call a friend: tell them what you are doing right now and what is different from home.', tips: 'Right now I’m… At home it usually…, but here…', model: 'Hi! Right now I’m sitting on the beach. At home it’s usually cold in November, but here it’s 30 degrees!' },
+              { id: 'r3', q: 'Roll the dice again! Now you are a tourist there. Call a friend: tell them what you are doing right now and what is different from home.', tips: 'Right now I’m… At home it usually…, but here…', model: 'Hi! Right now I’m sitting on the beach. At home it’s usually cold in November, but here it’s 30 degrees!' },
               { id: 'r4', q: 'Guess the season! Describe a season, but don’t say its name. Your teacher guesses. Then swap.', tips: 'It’s usually… People wear… Children like to… Now it’s getting…', model: 'It’s usually hot and sunny. People wear shorts and sunglasses. Children swim in the sea every day. — Is it summer? — Yes, it is!' }
             ]
           }
