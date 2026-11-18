@@ -346,16 +346,16 @@ I like this weather! What’s the weather like in London? Is it raining again? �
             ]
           },
           {
-            id: 'speak-planet',
+            id: 'speak-roulette',
             type: 'speaking',
-            title: 'Weather on a crazy planet 🪐',
-            instructions: 'Уяви, що ти космонавт(ка) і щойно прилетів(-ла) на дивну планету. Там зовсім інша погода: може йти дощ із шоколаду чи сніг із попкорну! Вигадуй що завгодно — помилок тут бути не може. Розкажи на Землю, що бачиш.',
-            phrases: ['Hello, Earth! I’m on planet…', 'Here it usually…', 'Right now it’s raining / snowing…', 'The aliens are…ing', 'I’m wearing…', 'Don’t forget your…!'],
+            title: 'Weather roulette 🎲',
+            instructions: 'Кинь кубик (або попроси викладача назвати число від 1 до 6). Число визначає, де ти зараз і яка там погода. Уяви, що ти там, і розкажи! Потім — гра у вгадування.',
+            phrases: ['I’m in… It’s…', 'Right now it’s raining / snowing…', 'People are…ing', 'I’m wearing…', 'I’m taking… because…', 'It usually…'],
             tasks: [
-              { id: 'pl1', q: 'What is the name of your planet? What is the weather usually like there?', tips: 'My planet is called … It usually rains … / It’s always …', model: 'Hello, Earth! I’m on planet Yum. It usually rains orange juice here and it’s always 50 degrees!' },
-              { id: 'pl2', q: 'What is happening right now? What is falling from the sky?', tips: 'Look! It’s snowing … The sky is …', model: 'Look! Right now it’s snowing popcorn and there’s a green rainbow in the sky!' },
-              { id: 'pl3', q: 'What are the aliens doing? What do they usually do in this weather?', tips: 'The aliens are …ing. They usually …', model: 'The aliens are eating the popcorn and dancing. They usually swim in the orange juice puddles.' },
-              { id: 'pl4', q: 'What are you wearing? Give advice to the next astronaut.', tips: 'I’m wearing … Don’t forget your …!', model: 'I’m wearing a big hat and sunglasses. Don’t forget your umbrella — the juice is sticky!' }
+              { id: 'r1', q: '🎲 1–2: London — it’s raining cats and dogs. 3–4: Kyiv — it’s freezing and snowing. 5–6: Barcelona — it’s boiling hot. Where are you? Describe the weather and what people in the street are doing.', tips: 'I’m in… It’s… People are… Some children are…', model: 'I’m in Kyiv. It’s minus ten and it’s snowing. People are walking fast. Some children are making a snowman.' },
+              { id: 'r2', q: 'Pack your bag! You are flying to this city tomorrow. Name 3 things you are taking and say why.', tips: 'I’m taking… because it’s… / Don’t forget your…', model: 'I’m taking my boots because it’s icy. I’m taking a warm scarf because it’s freezing. And hot tea!' },
+              { id: 'r3', q: 'Roll again! Now you are a tourist there. Call a friend: tell them what you are doing right now and what is different from home.', tips: 'Right now I’m… At home it usually…, but here…', model: 'Hi! Right now I’m sitting on the beach. At home it’s usually cold in November, but here it’s 30 degrees!' },
+              { id: 'r4', q: 'Guess the season! Describe a season, but don’t say its name. Your teacher guesses. Then swap.', tips: 'It’s usually… People wear… Children like to… Now it’s getting…', model: 'It’s usually hot and sunny. People wear shorts and sunglasses. Children swim in the sea every day. — Is it summer? — Yes, it is!' }
             ]
           }
         ]
@@ -376,7 +376,7 @@ I like this weather! What’s the weather like in London? Is it raining again? �
       'sea': 'море', 'village': 'село', 'everything': 'все', 'white': 'білий', 'really': 'справді', 'reading': 'читаю', 'book': 'книга',
       'soup': 'суп', 'grandad': 'дідусь', 'granny': 'бабуся', 'cleaning': 'прибирає', 'garden': 'сад', 'message': 'повідомлення', 'city': 'місто',
       'season': 'пора року', 'café': 'кафе', 'coffee': 'кава', 'jacket': 'куртка', 'only': 'лише', 'jeans': 'джинси', 'sweater': 'светр',
-      'because': 'тому що', 'planet': 'планета', 'astronaut': 'космонавт', 'aliens': 'прибульці', 'earth': 'Земля', 'falling': 'падає', 'called': 'називається', 'sticky': 'липкий', 'popcorn': 'попкорн', 'chocolate': 'шоколад', 'dancing': 'танцюють', 'advice': 'порада', 'next': 'наступний', 'freezing': 'дуже холодно; змерзлий', 'boiling': 'дуже жарко', 'boiling hot': 'страшенна спека', 'chilly': 'прохолодно',
+      'because': 'тому що', 'roulette': 'рулетка', 'roll': 'кинути (кубик)', 'pack': 'пакувати', 'bag': 'сумка', 'flying': 'летиш', 'taking': 'беру', 'tourist': 'турист', 'call': 'подзвонити', 'different': 'інший', 'beach': 'пляж', 'guess': 'вгадувати', 'swap': 'помінятися', 'street': 'вулиця', 'fast': 'швидко', 'tea': 'чай', 'wear': 'носити', 'freezing': 'дуже холодно; змерзлий', 'boiling': 'дуже жарко', 'boiling hot': 'страшенна спека', 'chilly': 'прохолодно',
       'stormy': 'буремно', 'storm': 'буря', 'thunder': 'грім', 'lightning': 'блискавка', 'rainbow': 'веселка', 'puddle': 'калюжа', 'puddles': 'калюжі',
       'wet': 'мокрий', 'dry': 'сухий', 'get wet': 'промокнути', 'getting wet': 'промокаю', 'icy': 'слизько, ожеледь', 'degrees': 'градуси', 'minus': 'мінус',
       'temperature': 'температура', 'forecast': 'прогноз', 'weather forecast': 'прогноз погоди', 'raincoat': 'дощовик', 'scarf': 'шарф', 'boots': 'чоботи',
