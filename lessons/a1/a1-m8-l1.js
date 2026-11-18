@@ -234,21 +234,6 @@ Ken: No, I don’t. I love summer. In summer it’s hot and I swim every day.`
 <span class="no">Is cold today.</span> → <span class="yes">It’s cold today.</span></div>`
           },
           {
-            id: 'gram-gap',
-            type: 'gap',
-            title: 'Usually or now?',
-            instructions: 'Встав дієслово в Present Simple (зазвичай) або Present Continuous (зараз).',
-            items: [
-              { id: 'g1', text: 'It often {{rains}} in London. (rain)' },
-              { id: 'g2', text: 'Look! It {{is snowing|’s snowing}}! (snow)' },
-              { id: 'g3', text: 'The sun {{is shining|’s shining}} today. (shine)' },
-              { id: 'g4', text: 'It {{doesn’t snow|does not snow}} in Barcelona. (− snow)' },
-              { id: 'g5', text: 'I usually {{wear}} a coat in winter. (wear)' },
-              { id: 'g6', text: 'Today I {{am wearing|’m wearing}} a T-shirt. (wear)' },
-              { id: 'g7', text: 'It {{isn’t raining|is not raining}} now. Let’s go out! (− rain)' }
-            ]
-          },
-          {
             id: 'gram-choice',
             type: 'choice',
             title: 'Simple or Continuous?',
@@ -261,28 +246,6 @@ Ken: No, I don’t. I love summer. In summer it’s hot and I swim every day.`
               { id: 'c5', q: 'We usually ___ in the sea in summer.', options: ['are swimming', 'swim', 'swims'], answer: 1 },
               { id: 'c6', q: 'Look! The children ___ a snowman.', options: ['make', 'makes', 'are making'], answer: 2 },
               { id: 'c7', q: 'I ___ cold weather.', options: ['don’t like', 'am not liking'], answer: 0, explain: 'like — дієслово почуттів, з -ing не вживаємо.' }
-            ]
-          },
-          {
-            id: 'gram-sort',
-            type: 'sort',
-            title: 'Signal words',
-            instructions: 'Слова-підказки: до якого часу вони пасують?',
-            columns: [
-              { title: 'Present Simple', ua: 'зазвичай', items: ['usually', 'always', 'often', 'every day', 'in winter', 'never'] },
-              { title: 'Present Continuous', ua: 'зараз', items: ['now', 'right now', 'today', 'at the moment', 'Look!', 'Listen!'] }
-            ]
-          },
-          {
-            id: 'gram-order',
-            type: 'order',
-            title: 'Build the sentences',
-            instructions: 'Склади речення.',
-            items: [
-              { id: 'o1', prompt: 'Яка сьогодні погода?', answer: 'What’s the weather like today?' },
-              { id: 'o2', prompt: 'Взимку зазвичай холодно.', answer: 'It is usually cold in winter.' },
-              { id: 'o3', prompt: 'Дивись! Йде сніг!', answer: 'Look! It is snowing!', extra: ['snows'] },
-              { id: 'o4', prompt: 'Зараз не йде дощ.', answer: "It isn't raining now.", extra: ["doesn't"] }
             ]
           },
           {
@@ -381,6 +344,19 @@ I like this weather! What’s the weather like in London? Is it raining again? �
               { id: 'sp5', q: 'Small talk! Your teacher says: “Lovely day, isn’t it?” or “It’s cold today, isn’t it?” Answer and add one more sentence.', tips: 'Yes, it is! It’s getting… / Yes, I’m freezing!', model: '— It’s cold today, isn’t it? — Yes, it is! I’m freezing. It’s getting colder every day.' },
               { id: 'sp6', q: 'You are a TV weather presenter! Tell the forecast for your city.', tips: 'Good morning! Today it’s … degrees. It’s getting … Don’t forget your …!', model: 'Good morning! Today in Kyiv it’s 3 degrees and it’s raining. It’s getting colder. Don’t forget your umbrella and your scarf!' }
             ]
+          },
+          {
+            id: 'speak-planet',
+            type: 'speaking',
+            title: 'Weather on a crazy planet 🪐',
+            instructions: 'Уяви, що ти космонавт(ка) і щойно прилетів(-ла) на дивну планету. Там зовсім інша погода: може йти дощ із шоколаду чи сніг із попкорну! Вигадуй що завгодно — помилок тут бути не може. Розкажи на Землю, що бачиш.',
+            phrases: ['Hello, Earth! I’m on planet…', 'Here it usually…', 'Right now it’s raining / snowing…', 'The aliens are…ing', 'I’m wearing…', 'Don’t forget your…!'],
+            tasks: [
+              { id: 'pl1', q: 'What is the name of your planet? What is the weather usually like there?', tips: 'My planet is called … It usually rains … / It’s always …', model: 'Hello, Earth! I’m on planet Yum. It usually rains orange juice here and it’s always 50 degrees!' },
+              { id: 'pl2', q: 'What is happening right now? What is falling from the sky?', tips: 'Look! It’s snowing … The sky is …', model: 'Look! Right now it’s snowing popcorn and there’s a green rainbow in the sky!' },
+              { id: 'pl3', q: 'What are the aliens doing? What do they usually do in this weather?', tips: 'The aliens are …ing. They usually …', model: 'The aliens are eating the popcorn and dancing. They usually swim in the orange juice puddles.' },
+              { id: 'pl4', q: 'What are you wearing? Give advice to the next astronaut.', tips: 'I’m wearing … Don’t forget your …!', model: 'I’m wearing a big hat and sunglasses. Don’t forget your umbrella — the juice is sticky!' }
+            ]
           }
         ]
       }
@@ -400,7 +376,7 @@ I like this weather! What’s the weather like in London? Is it raining again? �
       'sea': 'море', 'village': 'село', 'everything': 'все', 'white': 'білий', 'really': 'справді', 'reading': 'читаю', 'book': 'книга',
       'soup': 'суп', 'grandad': 'дідусь', 'granny': 'бабуся', 'cleaning': 'прибирає', 'garden': 'сад', 'message': 'повідомлення', 'city': 'місто',
       'season': 'пора року', 'café': 'кафе', 'coffee': 'кава', 'jacket': 'куртка', 'only': 'лише', 'jeans': 'джинси', 'sweater': 'светр',
-      'because': 'тому що', 'freezing': 'дуже холодно; змерзлий', 'boiling': 'дуже жарко', 'boiling hot': 'страшенна спека', 'chilly': 'прохолодно',
+      'because': 'тому що', 'planet': 'планета', 'astronaut': 'космонавт', 'aliens': 'прибульці', 'earth': 'Земля', 'falling': 'падає', 'called': 'називається', 'sticky': 'липкий', 'popcorn': 'попкорн', 'chocolate': 'шоколад', 'dancing': 'танцюють', 'advice': 'порада', 'next': 'наступний', 'freezing': 'дуже холодно; змерзлий', 'boiling': 'дуже жарко', 'boiling hot': 'страшенна спека', 'chilly': 'прохолодно',
       'stormy': 'буремно', 'storm': 'буря', 'thunder': 'грім', 'lightning': 'блискавка', 'rainbow': 'веселка', 'puddle': 'калюжа', 'puddles': 'калюжі',
       'wet': 'мокрий', 'dry': 'сухий', 'get wet': 'промокнути', 'getting wet': 'промокаю', 'icy': 'слизько, ожеледь', 'degrees': 'градуси', 'minus': 'мінус',
       'temperature': 'температура', 'forecast': 'прогноз', 'weather forecast': 'прогноз погоди', 'raincoat': 'дощовик', 'scarf': 'шарф', 'boots': 'чоботи',
