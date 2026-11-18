@@ -102,6 +102,15 @@ window.ENG.registry = [
         lessons: [
           { id: 'a1-m7-l1', slug: 'lesson-1', title: 'What is he doing? Mr Bean 🎬', ua: 'відео · Present Continuous (повторення) · with', file: 'lessons/a1/a1-m7-l1.js' }
         ]
+      },
+      {
+        id: 'module-8',
+        num: 8,
+        title: 'Usually & Now',
+        ua: 'Зазвичай і зараз',
+        lessons: [
+          { id: 'a1-m8-l1', slug: 'lesson-1', title: 'Weather: usually… but today!', ua: 'погода · Present Simple vs Continuous', file: 'lessons/a1/a1-m8-l1.js' }
+        ]
       }
     ]
   },
