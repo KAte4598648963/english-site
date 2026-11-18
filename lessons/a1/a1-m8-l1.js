@@ -109,6 +109,44 @@ Ken: No, I don’t. I love summer. In summer it’s hot and I swim every day.`
               { title: 'Hot weather', ua: 'спека', items: ['sunny', 'summer', 'shorts', 'sunglasses', 'swim', 'ice cream'] },
               { title: 'Cold weather', ua: 'холод', items: ['snowy', 'winter', 'a coat', 'a warm hat', 'gloves', 'hot tea'] }
             ]
+          },
+          {
+            id: 'vocab-more',
+            type: 'flashcards',
+            title: 'More weather words ⛈',
+            instructions: 'Ще більше слів — щоб говорити про погоду, як носій мови.',
+            cards: [
+              { front: 'freezing', ipa: '/ˈfriːzɪŋ/', back: 'дуже холодно, морозно', example: 'It’s freezing today! Put on your scarf.' },
+              { front: 'boiling hot', back: 'страшенна спека', example: 'It’s boiling hot in July.' },
+              { front: 'chilly', ipa: '/ˈtʃɪli/', back: 'прохолодно', example: 'It’s a bit chilly this morning.' },
+              { front: 'stormy', back: 'буремно, гроза', example: 'It’s stormy — stay at home!' },
+              { front: 'thunder and lightning', ipa: '/ˈθʌndə ... ˈlaɪtnɪŋ/', back: 'грім і блискавка', example: 'I’m scared of thunder and lightning.' },
+              { front: 'a rainbow', back: 'веселка', example: 'Look! There’s a rainbow!' },
+              { front: 'a puddle', ipa: '/ˈpʌdl/', back: 'калюжа', example: 'The kids are jumping in the puddles.' },
+              { front: 'wet / dry', back: 'мокрий / сухий', example: 'My shoes are wet.' },
+              { front: 'get wet', back: 'промокнути', example: 'Take an umbrella or you’ll get wet.' },
+              { front: 'icy', back: 'слизько, ожеледь', example: 'Be careful! The road is icy.' },
+              { front: 'degrees', ipa: '/dɪˈɡriːz/', back: 'градуси', example: 'It’s 25 degrees today.' },
+              { front: 'the weather forecast', ipa: '/ˈfɔːkɑːst/', back: 'прогноз погоди', example: 'What does the weather forecast say?' },
+              { front: 'a raincoat', back: 'дощовик', example: 'I’m wearing my raincoat.' },
+              { front: 'a scarf / boots', back: 'шарф / чоботи', example: 'In winter I wear a scarf and boots.' }
+            ]
+          },
+          {
+            id: 'vocab-dnd',
+            type: 'dragdrop',
+            title: 'Use the new words',
+            instructions: 'Встав нове слово. Одне слово зайве.',
+            items: [
+              { id: 'd1', text: 'It’s minus ten. It’s {{freezing}}!' },
+              { id: 'd2', text: 'After the rain there’s a beautiful {{rainbow}} in the sky.' },
+              { id: 'd3', text: 'The children are jumping in the {{puddles}}.' },
+              { id: 'd4', text: 'Be careful! The road is {{icy}}.' },
+              { id: 'd5', text: 'Let’s check the weather {{forecast}} for tomorrow.' },
+              { id: 'd6', text: 'It’s raining and I haven’t got an umbrella. I’m getting {{wet}}!' },
+              { id: 'd7', text: 'It’s 35 {{degrees}}. It’s boiling hot!' }
+            ],
+            distractors: ['chilly']
           }
         ]
       },
@@ -246,6 +284,58 @@ Ken: No, I don’t. I love summer. In summer it’s hot and I swim every day.`
               { id: 'o3', prompt: 'Дивись! Йде сніг!', answer: 'Look! It is snowing!', extra: ['snows'] },
               { id: 'o4', prompt: 'Зараз не йде дощ.', answer: "It isn't raining now.", extra: ["doesn't"] }
             ]
+          },
+          {
+            id: 'gram-phrases',
+            type: 'rule',
+            title: 'Cool weather phrases 😎',
+            instructions: 'Корисні фрази й конструкції, які англійці кажуть щодня. Вчи їх цілими шматочками!',
+            html: `
+<h3>1. Температура</h3>
+<div class="ex-line">What’s the temperature? — It’s <mark>20 degrees</mark>. / It’s <mark>minus 5</mark>.</div>
+
+<h3>2. Погода змінюється: It’s getting… (стає)</h3>
+<p><b>getting + прикметник</b> = щось змінюється просто зараз. Це теж Present Continuous!</p>
+<div class="ex-line">It’s <mark>getting cold</mark>. — Стає холодно.</div>
+<div class="ex-line">It’s <mark>getting dark</mark>. — Темніє.</div>
+<div class="ex-line">The days are <mark>getting shorter</mark>. — Дні стають коротшими.</div>
+
+<h3>3. Як ти почуваєшся</h3>
+<div class="ex-line">I’m <mark>freezing</mark>! — Я змерз(-ла)! · I’m <mark>boiling</mark>! — Мені дуже жарко!</div>
+<div class="ex-line">I’m <mark>wet</mark>. — Я мокрий(-а). · I’m <mark>cold</mark>. — Мені холодно (не <span class="no">It’s cold for me</span>).</div>
+
+<h3>4. Поради: Take / Don’t forget…</h3>
+<div class="ex-line"><mark>Take</mark> an umbrella! — Візьми парасольку!</div>
+<div class="ex-line"><mark>Don’t forget</mark> your scarf! — Не забудь шарф!</div>
+<div class="ex-line"><mark>Put on</mark> your coat. — Вдягни пальто.</div>
+
+<h3>5. Small talk, як в Англії 🇬🇧</h3>
+<p>Англійці дуже люблять говорити про погоду! Питання в кінці речення — <b>isn’t it?</b> («правда ж?»):</p>
+<div class="ex-line">Lovely day, <mark>isn’t it</mark>? — Yes, it is! — Гарний день, правда ж?</div>
+<div class="ex-line">It’s cold today, <mark>isn’t it</mark>? — Yes, it’s freezing!</div>
+
+<h3>6. Ідіоми — для настрою 🙂</h3>
+<div class="ex-line">It’s <mark>raining cats and dogs</mark>! — Ллє як з відра!</div>
+<div class="ex-line">I’m <mark>under the weather</mark>. — Мені трохи зле (нездужаю).</div>
+
+<div class="tip">💡 <b>Нагадай собі!</b><br>
+Is it getting cold? — Yes, it <b>is</b>. / No, it <b>isn’t</b>.<br>
+Are you freezing? — Yes, I <b>am</b>! / No, I<b>’m not</b>.</div>`
+          },
+          {
+            id: 'gram-phrases-ex',
+            type: 'choice',
+            title: 'Say it like a native',
+            instructions: 'Обери фразу, яку сказав би англієць.',
+            items: [
+              { id: 'p1', q: 'Мені дуже холодно!', options: ['It’s cold for me!', 'I’m freezing!', 'I have cold!'], answer: 1 },
+              { id: 'p2', q: 'Стає темно.', options: ['It’s getting dark.', 'It gets dark now.', 'It’s become dark.'], answer: 0 },
+              { id: 'p3', q: 'Яка температура?', options: ['How many degrees is it?', 'What temperature it is?', 'What’s the temperature?'], answer: 2 },
+              { id: 'p4', q: 'Lovely day, ___?', options: ['is it', 'isn’t it', 'doesn’t it'], answer: 1 },
+              { id: 'p5', q: 'Ллє як з відра!', options: ['It’s raining a lot of water!', 'It’s raining cats and dogs!', 'It’s raining dogs!'], answer: 1 },
+              { id: 'p6', q: 'Не забудь парасольку!', options: ['Don’t forget your umbrella!', 'Not forget your umbrella!', 'You no forget umbrella!'], answer: 0 },
+              { id: 'p7', q: 'Мені трохи зле сьогодні.', options: ['I’m bad weather.', 'I’m cold weather.', 'I’m under the weather.'], answer: 2 }
+            ]
           }
         ]
       },
@@ -306,7 +396,7 @@ Ken: No, I don’t. I love summer. In summer it’s hot and I swim every day.`
             prompt: 'Write a message (40–60 words).\n• Where are you? What’s the weather like today?\n• What is the weather usually like in this season?\n• What are you doing / wearing right now?\n• Do you like this weather?',
             minWords: 40,
             maxWords: 70,
-            phrases: ['Today it’s', 'It’s usually', 'but today', 'Right now I’m', 'I’m wearing', 'I like / I don’t like'],
+            phrases: ['Today it’s', 'It’s usually', 'but today', 'Right now I’m', 'I’m wearing', 'It’s getting', 'It’s … degrees', 'I’m freezing / boiling', 'I like / I don’t like'],
             checklist: ['Є речення з usually (Present Simple)', 'Є речення з today / now (Present Continuous)', 'It’s + прикметник: It’s cold / sunny', 'Не забувай is / am / are перед -ing'],
             model: `Hi Tom! I’m in Kyiv. It’s usually cold and cloudy in November, but today it’s sunny and warm!
 
@@ -326,12 +416,14 @@ I like this weather! What’s the weather like in London? Is it raining again? �
             type: 'speaking',
             title: 'Look out of the window',
             instructions: 'Подивись у вікно й відповідай уголос. Короткі речення — це нормально!',
-            phrases: ['Today it’s…', 'It’s raining / snowing / The sun is shining.', 'It’s usually…', 'I usually…, but today I’m…', 'I like / I don’t like…'],
+            phrases: ['Today it’s…', 'It’s raining / snowing / The sun is shining.', 'It’s usually…', 'I usually…, but today I’m…', 'It’s getting…', '…, isn’t it?', 'Don’t forget your…', 'I like / I don’t like…'],
             tasks: [
               { id: 'sp1', q: 'What’s the weather like today?', tips: 'It’s … The sun is … / It’s raining …', model: 'Today it’s cloudy and cold. It isn’t raining.' },
               { id: 'sp2', q: 'What is the weather usually like in your city in winter? And in summer?', tips: 'In winter it’s usually… In summer it’s…', model: 'In winter it’s usually cold and it snows. In summer it’s hot and sunny.' },
               { id: 'sp3', q: 'What are you wearing today? What do you usually wear in winter?', tips: 'Today I’m wearing… In winter I usually wear…', model: 'Today I’m wearing jeans and a sweater. In winter I usually wear a big coat and a warm hat.' },
-              { id: 'sp4', q: 'What weather do you like? Why?', tips: 'I like … because I can …', model: 'I like sunny weather because I can walk in the park.' }
+              { id: 'sp4', q: 'What weather do you like? Why?', tips: 'I like … because I can …', model: 'I like sunny weather because I can walk in the park.' },
+              { id: 'sp5', q: 'Small talk! Your teacher says: “Lovely day, isn’t it?” or “It’s cold today, isn’t it?” Answer and add one more sentence.', tips: 'Yes, it is! It’s getting… / Yes, I’m freezing!', model: '— It’s cold today, isn’t it? — Yes, it is! I’m freezing. It’s getting colder every day.' },
+              { id: 'sp6', q: 'You are a TV weather presenter! Tell the forecast for your city.', tips: 'Good morning! Today it’s … degrees. It’s getting … Don’t forget your …!', model: 'Good morning! Today in Kyiv it’s 3 degrees and it’s raining. It’s getting colder. Don’t forget your umbrella and your scarf!' }
             ]
           }
         ]
@@ -352,7 +444,14 @@ I like this weather! What’s the weather like in London? Is it raining again? �
       'sea': 'море', 'village': 'село', 'everything': 'все', 'white': 'білий', 'really': 'справді', 'reading': 'читаю', 'book': 'книга',
       'soup': 'суп', 'grandad': 'дідусь', 'granny': 'бабуся', 'cleaning': 'прибирає', 'garden': 'сад', 'message': 'повідомлення', 'city': 'місто',
       'season': 'пора року', 'café': 'кафе', 'coffee': 'кава', 'jacket': 'куртка', 'only': 'лише', 'jeans': 'джинси', 'sweater': 'светр',
-      'because': 'тому що', 'window': 'вікно', 'out of the window': 'у вікно', 'go out': 'вийти на вулицю', "let's": 'давай', 'problem': 'проблема',
+      'because': 'тому що', 'freezing': 'дуже холодно; змерзлий', 'boiling': 'дуже жарко', 'boiling hot': 'страшенна спека', 'chilly': 'прохолодно',
+      'stormy': 'буремно', 'storm': 'буря', 'thunder': 'грім', 'lightning': 'блискавка', 'rainbow': 'веселка', 'puddle': 'калюжа', 'puddles': 'калюжі',
+      'wet': 'мокрий', 'dry': 'сухий', 'get wet': 'промокнути', 'getting wet': 'промокаю', 'icy': 'слизько, ожеледь', 'degrees': 'градуси', 'minus': 'мінус',
+      'temperature': 'температура', 'forecast': 'прогноз', 'weather forecast': 'прогноз погоди', 'raincoat': 'дощовик', 'scarf': 'шарф', 'boots': 'чоботи',
+      'getting': 'стає', 'dark': 'темно', 'shorter': 'коротші', 'days': 'дні', 'put on': 'вдягнути', 'forget': 'забувати', "don't forget": 'не забудь',
+      'lovely': 'чудовий', "isn't it": 'правда ж?', 'raining cats and dogs': 'ллє як з відра', 'under the weather': 'нездужаю', 'scared': 'наляканий',
+      'jumping': 'стрибають', 'careful': 'обережний', 'road': 'дорога', 'tomorrow': 'завтра', 'sky': 'небо', 'beautiful': 'гарний', 'check': 'перевірити',
+      'presenter': 'ведучий', 'native': 'носій мови', 'morning': 'ранок', 'july': 'липень', 'stay': 'залишатися', 'a bit': 'трохи', 'colder': 'холодніше', 'window': 'вікно', 'out of the window': 'у вікно', 'go out': 'вийти на вулицю', "let's": 'давай', 'problem': 'проблема',
       "it's": 'це (є)', "isn't": 'не (є)', "doesn't": 'не', "don't": 'не', "i'm": 'я (є)'
     }
   });
