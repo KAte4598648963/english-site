@@ -341,50 +341,6 @@ Are you freezing? — Yes, I <b>am</b>! / No, I<b>’m not</b>.</div>`
       },
 
       {
-        id: 'listening',
-        title: 'Listening',
-        exercises: [
-          {
-            id: 'listen-forecast',
-            type: 'choice',
-            title: 'A phone call about the weather',
-            instructions: 'Аня телефонує бабусі. Послухай і дай відповіді.',
-            audio: {
-              title: 'Phone call: Anya & Granny',
-              lines: [
-                { who: 'Anya', text: 'Hi, Granny! How are you? What’s the weather like in your village?' },
-                { who: 'Granny', text: 'Hello, Anya! Oh, it’s snowing here! Everything is white.' },
-                { who: 'Anya', text: 'Really? Here in Odesa it isn’t snowing. It’s raining.' },
-                { who: 'Granny', text: 'It usually rains in Odesa in November. What are you doing?' },
-                { who: 'Anya', text: 'I’m sitting at home and I’m reading a book. And you?' },
-                { who: 'Granny', text: 'I’m making soup. Your grandad is cleaning the snow in the garden.' },
-                { who: 'Anya', text: 'Ha ha! He always does that. Bye, Granny!' }
-              ]
-            },
-            items: [
-              { id: 'l1', q: 'What’s the weather like in Granny’s village?', options: ['It’s raining.', 'It’s sunny.', 'It’s snowing.'], answer: 2 },
-              { id: 'l2', q: 'What’s the weather like in Odesa?', options: ['It’s raining.', 'It’s snowing.', 'It’s hot.'], answer: 0 },
-              { id: 'l3', q: 'What is Anya doing?', options: ['She’s making soup.', 'She’s reading a book.', 'She’s walking.'], answer: 1 },
-              { id: 'l4', q: 'What is Granny doing?', options: ['She’s cleaning the snow.', 'She’s sleeping.', 'She’s making soup.'], answer: 2 },
-              { id: 'l5', q: 'Who is in the garden?', options: ['Grandad', 'Anya', 'The cat'], answer: 0 }
-            ]
-          },
-          {
-            id: 'listen-dict',
-            type: 'dictation',
-            title: 'Dictation',
-            instructions: 'Послухай і запиши.',
-            items: [
-              { id: 'dc1', text: 'It is snowing here.' },
-              { id: 'dc2', text: 'It usually rains in November.' },
-              { id: 'dc3', text: 'I am reading a book.' },
-              { id: 'dc4', text: 'What is the weather like?' }
-            ]
-          }
-        ]
-      },
-
-      {
         id: 'writing',
         title: 'Writing',
         exercises: [
