@@ -379,6 +379,23 @@ body, .lvl, .level-card { --lc: var(--lvl-b1); }
 .video-box .video-foot { padding: 8px 16px 12px; }
 .video-box .video-foot a { color: var(--sc, var(--accent)); }
 .video-emoji { font-size: 1.1em; }
+.dice-box { display: grid; grid-template-columns: auto 1fr; gap: 12px 18px; align-items: center; margin-bottom: 20px; padding: 16px; border-radius: 14px; background: var(--surface-2); border: 1px solid var(--border); }
+.die { width: 76px; height: 76px; padding: 9px; border-radius: 18px; border: 1px solid var(--border-strong); background: var(--surface); box-shadow: var(--shadow), inset 0 -4px 0 var(--surface-3); cursor: pointer; transition: transform 0.15s ease; }
+@media (hover: hover) { .die:hover { transform: translateY(-2px) rotate(-4deg); } }
+.die:active { transform: scale(0.94); }
+.die:focus-visible { outline: 3px solid var(--primary); outline-offset: 3px; }
+.die-face { display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: repeat(3, 1fr); width: 100%; height: 100%; place-items: center; }
+.die .pip { width: 12px; height: 12px; border-radius: 50%; background: transparent; }
+.die .pip.on { background: var(--c-speaking, var(--primary)); }
+.die.rolling { animation: die-roll 0.8s cubic-bezier(0.3, 0.7, 0.4, 1); }
+@keyframes die-roll { 0% { transform: rotate(0) scale(1); } 30% { transform: rotate(200deg) scale(1.12) translateY(-10px); } 60% { transform: rotate(320deg) scale(0.96); } 100% { transform: rotate(360deg) scale(1); } }
+.dice-result { display: flex; align-items: center; gap: 12px; font-size: 1.05rem; min-height: 48px; }
+.dice-result.shown { animation: dice-pop 0.3s ease; }
+@keyframes dice-pop { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
+.dice-num { flex: none; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--c-speaking, var(--primary)); color: #fff; font-weight: 700; font-size: 1.15rem; }
+.dice-text { font-weight: 600; }
+.dice-legend { grid-column: 1 / -1; margin: 0; padding: 10px 0 0 1.1em; border-top: 1px dashed var(--border-strong); line-height: 1.7; }
+@media (prefers-reduced-motion: reduce) { .die, .die.rolling, .dice-result.shown { animation: none; transition: none; } }
 .video-notice { margin: 0 0 14px 1.2em; line-height: 1.7; }
 @media (max-width: 600px) { .video-box .video-frame { margin: 0 8px; border-radius: 10px; } }
 

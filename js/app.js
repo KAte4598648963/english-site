@@ -428,6 +428,7 @@
         ),
         ex.passage ? renderPassage(ex.passage) : null,
         ex.video ? renderVideo(ex.video) : null,
+        ex.dice ? renderDice(ex.dice) : null,
         ex.audio ? renderAudio(ex.audio, !!state.checked) : null,
         h('div', { class: 'ex-body' }, r.el),
         h('footer', { class: 'ex-foot' }, result, actions)
@@ -494,6 +495,55 @@
         { class: 'passage', open: true },
         h('summary', null, ENG.icon('eye'), p.title || 'Text'),
         h('div', { class: 'passage-text' }, String(p.text).split(/\n\s*\n/).map((para) => h('p', null, para.trim())))
+      );
+    }
+
+    /* Dice: ex.dice = { label?, results: [{ n: [1, 2], text: '…' }, …] } — a tappable 6-sided die */
+    function renderDice(d) {
+      const PIPS = { 1: [4], 2: [0, 8], 3: [0, 4, 8], 4: [0, 2, 6, 8], 5: [0, 2, 4, 6, 8], 6: [0, 2, 3, 5, 6, 8] };
+      const cells = [];
+      for (let c = 0; c < 9; c++) cells.push(h('span', { class: 'pip' }));
+      const face = h('span', { class: 'die-face' }, cells);
+      const die = h('button', { class: 'die', type: 'button', 'aria-label': 'Кинути кубик' }, face);
+      const out = h('div', { class: 'dice-result', 'aria-live': 'polite' }, h('span', { class: 'muted' }, d.label || 'Натисни на кубик, щоб кинути! 🎲'));
+      const show = (n) => cells.forEach((c, ci) => c.classList.toggle('on', PIPS[n].indexOf(ci) >= 0));
+      show(1);
+      let busy = false;
+      die.addEventListener('click', () => {
+        if (busy) return;
+        busy = true;
+        const final = 1 + Math.floor(Math.random() * 6);
+        const reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        die.classList.remove('rolling');
+        void die.offsetWidth;
+        if (!reduce) die.classList.add('rolling');
+        out.classList.remove('shown');
+        let t = 0;
+        const steps = reduce ? 1 : 9;
+        const tick = () => {
+          t++;
+          if (t < steps) {
+            show(1 + Math.floor(Math.random() * 6));
+            setTimeout(tick, 70 + t * 12);
+            return;
+          }
+          show(final);
+          die.classList.remove('rolling');
+          const r = (d.results || []).find((x) => (x.n || []).indexOf(final) >= 0);
+          out.replaceChildren(h('span', { class: 'dice-num' }, String(final)), h('span', { class: 'dice-text' }, r ? r.text : ''));
+          out.classList.add('shown');
+          busy = false;
+        };
+        tick();
+      });
+      return h(
+        'div',
+        { class: 'dice-box' },
+        die,
+        out,
+        d.results && d.results.length
+          ? h('ul', { class: 'dice-legend muted small' }, d.results.map((r) => h('li', null, h('b', null, r.n.join('–') + ': '), r.text)))
+          : null
       );
     }
 
