@@ -276,8 +276,10 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
               { id: 't4', text: 'Every year his mum {{says}} (say), “Your birthday is the first of March!”' },
               { id: 't5', text: 'Look! Emma {{is bringing}} (bring) a big birthday cake.' },
               { id: 't6', text: 'Jack and Lily {{are singing}} (sing) a song for their dad.' },
+              { id: 't9', text: 'Right now Tom’s friends {{are dancing}} (dance) in the living room.' },
               { id: 't7', text: 'Tom {{doesn’t work|does not work}} (not work) today. It’s his day off!' },
-              { id: 't8', text: 'Every January he {{buys}} (buy) a new calendar.' }
+              { id: 't8', text: 'Every January he {{buys}} (buy) a new calendar.' },
+              { id: 't10', text: 'And every four years he {{celebrates}} (celebrate) his real birthday!' }
             ]
           },
           {
@@ -347,7 +349,7 @@ My favourite month is May because it’s warm and sunny.`
     glossary: {
       'january': 'січень', 'february': 'лютий', 'march': 'березень', 'april': 'квітень', 'may': 'травень', 'june': 'червень',
       'july': 'липень', 'august': 'серпень', 'september': 'вересень', 'october': 'жовтень', 'november': 'листопад', 'december': 'грудень',
-      'date': 'дата, число', 'bringing': 'несе', 'singing': 'співають', 'song': 'пісня', 'dad': 'тато', 'big day': 'великий день', 'celebrating': 'святкує', 'having': 'влаштовує (має)', 'present': 'подарунок', 'birthday party': 'вечірка на день народження', 'meeting': 'зустріч, нарада', 'busy': 'зайнятий', 'free': 'вільний', 'write': 'писати', 'favourite holiday': 'улюблене свято', 'public holiday': 'державне свято', 'leap year': 'високосний рік', 'anniversary': 'річниця', 'wedding anniversary': 'річниця весілля',
+      'date': 'дата, число', 'dancing': 'танцюють', 'living room': 'вітальня', 'celebrates': 'святкує', 'bringing': 'несе', 'singing': 'співають', 'song': 'пісня', 'dad': 'тато', 'big day': 'великий день', 'celebrating': 'святкує', 'having': 'влаштовує (має)', 'present': 'подарунок', 'birthday party': 'вечірка на день народження', 'meeting': 'зустріч, нарада', 'busy': 'зайнятий', 'free': 'вільний', 'write': 'писати', 'favourite holiday': 'улюблене свято', 'public holiday': 'державне свято', 'leap year': 'високосний рік', 'anniversary': 'річниця', 'wedding anniversary': 'річниця весілля',
       'celebrate': 'святкувати', 'was born': 'народився(-лася)', 'born': 'народжений', 'once a year': 'раз на рік', 'the day after tomorrow': 'післязавтра',
       'the day before yesterday': 'позавчора', 'yesterday': 'вчора', 'last week': 'минулого тижня', 'next week': 'наступного тижня', 'last year': 'минулого року',
       'next year': 'наступного року', 'top': 'верх', 'page': 'сторінка', 'cousins': 'двоюрідні брати й сестри', 'see': 'бачити', 'ukraine': 'Україна', 'calendar': 'календар', 'day off': 'вихідний', 'days off': 'вихідні',
