@@ -90,50 +90,50 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
           {
             id: 'vocab-cards',
             type: 'flashcards',
-            title: '15 new words',
-            instructions: 'Це всі нові слова уроку: 12 місяців і 3 корисні слова. Натисни на картку, щоб побачити переклад. Прочитай приклад уголос.',
+            title: '15 useful words and phrases',
+            instructions: 'Це всі нові слова уроку. Натисни на картку, щоб побачити переклад. Прочитай приклад уголос.',
             cards: [
-              { front: 'January', ipa: '/ˈdʒænjuəri/', back: 'січень', example: 'New Year’s Day is the first of January.' },
-              { front: 'February', ipa: '/ˈfebruəri/', back: 'лютий', example: 'February is short: only 28 days.' },
-              { front: 'March', ipa: '/mɑːtʃ/', back: 'березень', example: 'March is the first month of spring.' },
-              { front: 'April', ipa: '/ˈeɪprəl/', back: 'квітень', example: 'April is often rainy.' },
-              { front: 'May', ipa: '/meɪ/', back: 'травень', example: 'My wife’s birthday is the fifth of May.' },
-              { front: 'June', ipa: '/dʒuːn/', back: 'червень', example: 'June is the first month of summer.' },
-              { front: 'July', ipa: '/dʒuˈlaɪ/', back: 'липень', example: 'July is usually hot.' },
-              { front: 'August', ipa: '/ˈɔːɡəst/', back: 'серпень', example: 'Independence Day is the 24th of August.' },
-              { front: 'September', ipa: '/sepˈtembə/', back: 'вересень', example: 'September is the start of the school year.' },
-              { front: 'October', ipa: '/ɒkˈtəʊbə/', back: 'жовтень', example: 'October is yellow and red.' },
-              { front: 'November', ipa: '/nəʊˈvembə/', back: 'листопад', example: 'November is cold and grey.' },
-              { front: 'December', ipa: '/dɪˈsembə/', back: 'грудень', example: 'Christmas is the 25th of December.' },
-              { front: 'a date', ipa: '/deɪt/', back: 'дата, число', example: 'What’s the date today?' },
-              { front: 'a calendar', ipa: '/ˈkælɪndə/', back: 'календар', example: 'There’s a calendar on the wall.' },
-              { front: 'a day off', back: 'вихідний (день)', example: 'Saturday is my day off.' }
+              { front: 'What’s the date today?', back: 'Яке сьогодні число?', example: '— What’s the date today? — It’s the third of May.' },
+              { front: 'a date', ipa: '/deɪt/', back: 'дата, число', example: 'Please write the date at the top of the page.' },
+              { front: 'a calendar', ipa: '/ˈkælɪndə/', back: 'календар', example: 'Every January I buy a new calendar.' },
+              { front: 'a day off', back: 'вихідний (день)', example: 'Saturday is my day off.' },
+              { front: 'a public holiday', ipa: '/ˈpʌblɪk ˈhɒlədeɪ/', back: 'державне свято, вихідний для всіх', example: 'Christmas Day is a public holiday.' },
+              { front: 'a leap year', ipa: '/liːp jɪə/', back: 'високосний рік', example: '2028 is a leap year.' },
+              { front: 'an appointment', ipa: '/əˈpɔɪntmənt/', back: 'запис, прийом (до лікаря тощо)', example: 'I have a dentist appointment today.' },
+              { front: 'a wedding', back: 'весілля', example: 'The wedding is the 14th of June.' },
+              { front: 'an invitation', ipa: '/ˌɪnvɪˈteɪʃn/', back: 'запрошення', example: 'Thank you for the invitation!' },
+              { front: 'an anniversary', ipa: '/ˌænɪˈvɜːsəri/', back: 'річниця', example: 'Our wedding anniversary is the 5th of May.' },
+              { front: 'celebrate', ipa: '/ˈselɪbreɪt/', back: 'святкувати', example: 'We celebrate New Year with friends.' },
+              { front: 'I was born in…', back: 'Я народився / народилася в…', example: 'I was born in 1985.' },
+              { front: 'once a year', back: 'раз на рік', example: 'We see our cousins once a year.' },
+              { front: 'the day after tomorrow', back: 'післязавтра', example: 'Today is Monday. The day after tomorrow is Wednesday.' },
+              { front: 'the day before yesterday', back: 'позавчора', example: 'Today is Friday. The day before yesterday was Wednesday.' }
             ]
           },
           {
-            id: 'vocab-seasons',
+            id: 'vocab-match',
+            type: 'match',
+            title: 'Words and meanings',
+            instructions: 'Поєднай англійське слово ліворуч з перекладом праворуч. Натисни на слово, а потім на його переклад.',
+            pairs: [
+              ['a day off', 'вихідний'],
+              ['a public holiday', 'державне свято'],
+              ['a leap year', 'високосний рік'],
+              ['an appointment', 'запис до лікаря'],
+              ['an anniversary', 'річниця'],
+              ['celebrate', 'святкувати'],
+              ['once a year', 'раз на рік'],
+              ['the day after tomorrow', 'післязавтра']
+            ]
+          },
+          {
+            id: 'vocab-time',
             type: 'sort',
-            title: 'Months and seasons',
-            instructions: 'Розклади 12 місяців за порами року. Натисни на місяць, а потім на потрібну колонку (або перетягни його).',
+            title: 'Before or after today?',
+            instructions: 'Розклади вирази у дві колонки. Ліворуч — те, що було ДО сьогодні. Праворуч — те, що буде ПІСЛЯ сьогодні. Натисни на вираз, а потім на колонку.',
             columns: [
-              { title: 'Winter', ua: 'зима', items: ['December', 'January', 'February'] },
-              { title: 'Spring', ua: 'весна', items: ['March', 'April', 'May'] },
-              { title: 'Summer', ua: 'літо', items: ['June', 'July', 'August'] },
-              { title: 'Autumn', ua: 'осінь', items: ['September', 'October', 'November'] }
-            ]
-          },
-          {
-            id: 'vocab-gap',
-            type: 'gap',
-            title: 'Which month is missing?',
-            instructions: 'Якого місяця не вистачає? Напиши його англійською в порожнє поле. Велика чи мала літера — не важливо.',
-            items: [
-              { id: 'g1', text: 'January, February, {{March}}', hint: 'березень' },
-              { id: 'g2', text: '{{April}}, May, June', hint: 'квітень' },
-              { id: 'g3', text: 'July, {{August}}, September', hint: 'серпень' },
-              { id: 'g4', text: 'October, November, {{December}}', hint: 'грудень' },
-              { id: 'g5', text: 'The month after June is {{July}}.', hint: 'after = після' },
-              { id: 'g6', text: 'The month before February is {{January}}.', hint: 'before = перед' }
+              { title: '⬅️ Before today', ua: 'минуле', items: ['yesterday', 'the day before yesterday', 'last week', 'last year'] },
+              { title: 'After today ➡️', ua: 'майбутнє', items: ['tomorrow', 'the day after tomorrow', 'next week', 'next year'] }
             ]
           },
           {
@@ -142,14 +142,16 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             title: 'Use the new words',
             instructions: 'Перетягни (або натисни) правильне слово в кожен пропуск. Одне слово зайве.',
             items: [
-              { id: 'd1', text: 'What’s the {{date}} today?' },
-              { id: 'd2', text: 'Look at the {{calendar}}: the 1st of May is a Friday.' },
-              { id: 'd3', text: 'I don’t work. Sunday is my {{day off}}.' },
-              { id: 'd4', text: 'Christmas is the 25th of {{December}}.' },
-              { id: 'd5', text: 'Independence Day is the 24th of {{August}}.' },
-              { id: 'd6', text: 'Valentine’s Day is the 14th of {{February}}.' }
+              { id: 'v1', text: 'It’s Saturday, so it’s my {{day off}}. I don’t work today.' },
+              { id: 'v2', text: 'Independence Day is a {{public holiday}} in Ukraine.' },
+              { id: 'v3', text: 'February has 29 days only in a {{leap year}}.' },
+              { id: 'v4', text: 'I have a dentist {{appointment}} at 9:30.' },
+              { id: 'v5', text: 'Our wedding {{anniversary}} is the 14th of June.' },
+              { id: 'v6', text: 'We always {{celebrate}} New Year with friends.' },
+              { id: 'v7', text: 'I was {{born}} in 1990.' },
+              { id: 'v8', text: 'Today is Monday. The day after {{tomorrow}} is Wednesday.' }
             ],
-            distractors: ['March']
+            distractors: ['invitation']
           }
         ]
       },
@@ -307,15 +309,15 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             type: 'speaking',
             title: 'Dates in my life',
             instructions: 'Відповідай уголос на кожне питання. Під питанням є підказка, з чого почати речення. Короткі відповіді — це нормально.',
-            phrases: ['It’s the … of …', 'My birthday is…', 'His / Her birthday is…', 'My mum’s / son’s birthday is…', 'Yes, it is. / No, it isn’t.', 'My favourite month is… because…', '… is a day off.'],
+            phrases: ['It’s the … of …', 'My birthday is…', 'I was born in…', 'We celebrate…', 'a public holiday', 'His / Her birthday is…', 'My mum’s / son’s birthday is…', 'Yes, it is. / No, it isn’t.', 'My favourite month is… because…', '… is a day off.'],
             tasks: [
-              { id: 'sp1', q: 'When’s your birthday?', tips: 'My birthday is the … of …', model: 'My birthday is the eighteenth of October.' },
+              { id: 'sp1', q: 'When’s your birthday? What year were you born?', tips: 'My birthday is the … of … I was born in …', model: 'My birthday is the eighteenth of October. I was born in 1985.' },
               { id: 'sp2', q: 'What’s the date today? And tomorrow?', tips: 'Today is the … Tomorrow is the …', model: 'Today is the twenty-fifth of November. Tomorrow is the twenty-sixth of November.' },
               { id: 'sp3', q: 'Ask your teacher (or a partner): “When’s your birthday?” Then tell everyone the answer.', tips: 'His / Her birthday is the …', model: '— When’s your birthday? — It’s the third of June. — Her birthday is the third of June.' },
               { id: 'sp4', q: 'Your teacher says a wrong date: “Is it the first of March today?” Say “No” and the correct date.', tips: 'No, it isn’t. It’s the …', model: 'No, it isn’t. It’s the twenty-fifth of November.' },
               { id: 'sp5', q: 'Name three birthdays in your family.', tips: 'My mum’s birthday is… My son’s birthday is…', model: 'My mum’s birthday is the second of April. My husband’s birthday is the ninth of July. My son’s birthday is the thirtieth of January.' },
               { id: 'sp6', q: 'What’s your favourite month? Why?', tips: 'My favourite month is … because it’s … / because my … is …', model: 'My favourite month is May because it’s warm and sunny. And my birthday is the fifth of May!' },
-              { id: 'sp7', q: 'Name two holidays in Ukraine and their dates. Are they days off for you?', tips: '… is the … of … It’s a day off for me. / I work.', model: 'Christmas is the twenty-fifth of December. New Year’s Day is the first of January. It’s a day off for me.' }
+              { id: 'sp7', q: 'Name two public holidays in Ukraine and their dates. How do you celebrate them?', tips: '… is a public holiday. It’s the … of … We celebrate with…', model: 'Christmas Day is a public holiday. It’s the twenty-fifth of December. We celebrate with our family.' }
             ]
           }
         ]
@@ -333,7 +335,7 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             prompt: 'Write 40–60 words.\n1. When is your birthday?\n2. When are the birthdays of two people in your family?\n3. What is your favourite holiday? What is the date?\n4. What is your favourite month? Why?',
             minWords: 40,
             maxWords: 70,
-            phrases: ['My birthday is the … of …', 'My … ’s birthday is…', 'My favourite holiday is…', 'It’s the … of …', 'It’s a day off.', 'My favourite month is… because…'],
+            phrases: ['My birthday is the … of …', 'I was born in…', 'My … ’s birthday is…', 'We celebrate…', 'a public holiday', 'once a year', 'My favourite holiday is…', 'It’s the … of …', 'It’s a day off.', 'My favourite month is… because…'],
             checklist: ['Кожна дата: the + порядкове число + of + місяць', 'Місяці пишемо з великої літери: May, June', 'Перевір: first, second, third, fifth, twelfth', 'Є відповіді на всі 4 пункти'],
             model: `My birthday is the eighteenth of October. My mum’s birthday is the second of April, and my brother’s birthday is the twenty-third of July.
 
@@ -348,7 +350,10 @@ My favourite month is May because it’s warm and sunny.`
     glossary: {
       'january': 'січень', 'february': 'лютий', 'march': 'березень', 'april': 'квітень', 'may': 'травень', 'june': 'червень',
       'july': 'липень', 'august': 'серпень', 'september': 'вересень', 'october': 'жовтень', 'november': 'листопад', 'december': 'грудень',
-      'date': 'дата, число', 'calendar': 'календар', 'day off': 'вихідний', 'days off': 'вихідні',
+      'date': 'дата, число', 'public holiday': 'державне свято', 'leap year': 'високосний рік', 'anniversary': 'річниця', 'wedding anniversary': 'річниця весілля',
+      'celebrate': 'святкувати', 'was born': 'народився(-лася)', 'born': 'народжений', 'once a year': 'раз на рік', 'the day after tomorrow': 'післязавтра',
+      'the day before yesterday': 'позавчора', 'yesterday': 'вчора', 'last week': 'минулого тижня', 'next week': 'наступного тижня', 'last year': 'минулого року',
+      'next year': 'наступного року', 'top': 'верх', 'page': 'сторінка', 'cousins': 'двоюрідні брати й сестри', 'see': 'бачити', 'ukraine': 'Україна', 'calendar': 'календар', 'day off': 'вихідний', 'days off': 'вихідні',
       'first': 'перший', 'second': 'другий', 'third': 'третій', 'fourth': 'четвертий', 'fifth': 'п’ятий', 'sixth': 'шостий', 'seventh': 'сьомий',
       'eighth': 'восьмий', 'ninth': 'дев’ятий', 'tenth': 'десятий', 'twelfth': 'дванадцятий', 'thirteenth': 'тринадцятий', 'fourteenth': 'чотирнадцятий',
       'fifteenth': 'п’ятнадцятий', 'twentieth': 'двадцятий', 'thirtieth': 'тридцятий', 'twenty-first': 'двадцять перший', 'twenty-eighth': 'двадцять восьмий',
