@@ -312,14 +312,9 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
 <ol class="q-list">
   <li>When’s your birthday?</li>
   <li>How do you celebrate your birthday?</li>
-  <li>What’s the date today?</li>
-  <li>What’s the date tomorrow?</li>
-  <li>Is it the first of March today?</li>
-  <li>When’s your mum’s birthday?</li>
   <li>When’s your best friend’s birthday?</li>
   <li>What’s your favourite month? Why?</li>
   <li>What’s your favourite holiday? What’s the date?</li>
-  <li>Is it a day off for you?</li>
 </ol>`
           }
         ]
