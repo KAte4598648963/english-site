@@ -13,7 +13,7 @@
 `sections: [{ id: 'reading' | 'vocabulary' | 'grammar' | 'listening' | 'writing' | 'speaking', title, exercises: [...] }]`
 
 ## Типи вправ
-Спільні поля: `id`, `type`, `title`, `instructions`, опційно `passage: { title, text }` (текст для читання), `audio: { title, lines: [{ who, text }] }` (озвучення браузером) та `video: { youtube: 'VIDEO_ID', title, start?, end? }` (вбудоване відео YouTube над вправою; `start`/`end` — у секундах). Також `dice: { results: [{ n: [1, 2], text: '…' }, …] }` — кубик, на який натискають; число показує відповідний текст (зразок — `a1/a1-m8-l1.js`, вправа `speak-roulette`). Зразок відео-уроку — `a1/a1-m7-l1.js`.
+Спільні поля: `id`, `type`, `title`, `instructions`, опційно `passage: { title, text }` (текст для читання), `audio: { title, lines: [{ who, text }] }` (озвучення браузером) та `video: { youtube: 'VIDEO_ID', title, start?, end? }` (вбудоване відео YouTube над вправою; `start`/`end` — у секундах). Також `dice: { results: [{ n: [1, 2], text: '…' }, …] }` — кубик, на який натискають; число показує відповідний текст (зразок — `a1/a1-m8-l1.js`, вправа `speak-roulette`). Зразок відео-уроку — `a1/a1-m7-l1.js`. Також `images: [{ src: 'media/…/pic.jpg', caption: 'A — A POSTER', alt: 'текст на картинці' }]` — ряд картинок поруч (на телефоні гортаються вбік), натиск відкриває на весь екран; файли клади в `media/<level>/…` (зразок — `a1/a1-m9-l1.js`, вправа `read-match`).
 
 | type | поля |
 |---|---|
