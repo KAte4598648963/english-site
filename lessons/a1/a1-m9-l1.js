@@ -304,20 +304,23 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
         title: 'Speaking',
         exercises: [
           {
-            id: 'speak-dates',
-            type: 'speaking',
+            id: 'speak-list',
+            type: 'rule',
             title: 'Dates in my life',
-            instructions: 'Відповідай уголос на кожне питання. Під питанням є підказка, з чого почати речення. Короткі відповіді — це нормально.',
-            phrases: ['It’s the … of …', 'My birthday is…', 'I celebrate with…', 'Are you free…?', 'I’m busy.', 'His / Her birthday is…', 'My mum’s / son’s birthday is…', 'Yes, it is. / No, it isn’t.', 'My favourite month is… because…', '… is a day off.'],
-            tasks: [
-              { id: 'sp1', q: 'When’s your birthday? How do you celebrate it?', tips: 'My birthday is the … of … I celebrate with…', model: 'My birthday is the eighteenth of October. I celebrate with my family. We have a big cake!' },
-              { id: 'sp2', q: 'What’s the date today? And tomorrow?', tips: 'Today is the … Tomorrow is the …', model: 'Today is the twenty-fifth of November. Tomorrow is the twenty-sixth of November.' },
-              { id: 'sp3', q: 'Ask your teacher (or a partner): “When’s your birthday?” Then tell everyone the answer.', tips: 'His / Her birthday is the …', model: '— When’s your birthday? — It’s the third of June. — Her birthday is the third of June.' },
-              { id: 'sp4', q: 'Your teacher says a wrong date: “Is it the first of March today?” Say “No” and the correct date.', tips: 'No, it isn’t. It’s the …', model: 'No, it isn’t. It’s the twenty-fifth of November.' },
-              { id: 'sp5', q: 'Name three birthdays in your family.', tips: 'My mum’s birthday is… My son’s birthday is…', model: 'My mum’s birthday is the second of April. My husband’s birthday is the ninth of July. My son’s birthday is the thirtieth of January.' },
-              { id: 'sp6', q: 'What’s your favourite month? Why?', tips: 'My favourite month is … because it’s … / because my … is …', model: 'My favourite month is May because it’s warm and sunny. And my birthday is the fifth of May!' },
-              { id: 'sp7', q: 'What is your favourite holiday? What is the date? Is it a day off?', tips: 'My favourite holiday is… It’s the … of … It’s a day off.', model: 'My favourite holiday is Christmas. It’s the twenty-fifth of December. It’s a day off, and we celebrate with our family.' }
-            ]
+            instructions: 'Відповідай уголос на кожне питання.',
+            html: `
+<ol class="q-list">
+  <li>When’s your birthday?</li>
+  <li>How do you celebrate your birthday?</li>
+  <li>What’s the date today?</li>
+  <li>What’s the date tomorrow?</li>
+  <li>Is it the first of March today?</li>
+  <li>When’s your mum’s birthday?</li>
+  <li>When’s your best friend’s birthday?</li>
+  <li>What’s your favourite month? Why?</li>
+  <li>What’s your favourite holiday? What’s the date?</li>
+  <li>Is it a day off for you?</li>
+</ol>`
           }
         ]
       },

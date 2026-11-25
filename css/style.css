@@ -834,3 +834,7 @@ body.translator .lesson textarea, body.translator .lesson input[type='text'] { c
 }
 .lightbox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0, 0, 0, 0.85); cursor: zoom-out; }
 .lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+
+/* Plain numbered question list inside a rule card */
+.rule-body ol.q-list { padding-left: 1.6em; margin: 4px 0 0; }
+.rule-body ol.q-list li { margin-bottom: 12px; font-size: 1.05rem; font-weight: 600; padding-left: 4px; }
