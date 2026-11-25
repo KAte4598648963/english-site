@@ -259,17 +259,19 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             ]
           },
           {
-            id: 'gram-gap',
+            id: 'gram-tenses',
             type: 'gap',
-            title: 'Say the date',
-            instructions: 'Ліворуч — дата, як її пишуть. Напиши в поле порядкове число словами, як його кажуть. Зразок: 5 May → the fifth of May.',
+            title: 'Tom’s big day 🎉',
+            instructions: 'Сьогодні 29 лютого 2028 року — справжній день народження Тома! Постав дієслово з дужок у правильну форму й напиши його в поле. Як обрати: usually / every year → Present Simple (he works). Now / today / right now → Present Continuous (he is working).',
             items: [
-              { id: 'w1', text: '2 March → the {{second}} of March', hint: 'крок 3' },
-              { id: 'w2', text: '8 August → the {{eighth}} of August', hint: 'крок 4: тільки + h' },
-              { id: 'w3', text: '13 July → the {{thirteenth}} of July', hint: 'крок 2: + th' },
-              { id: 'w4', text: '12 December → the {{twelfth}} of December', hint: 'крок 4: ve → f' },
-              { id: 'w5', text: '21 September → the {{twenty-first|twenty first}} of September', hint: 'крок 5' },
-              { id: 'w6', text: '30 November → the {{thirtieth}} of November', hint: 'крок 4: y → ie + th' }
+              { id: 't1', text: 'It’s the twenty-ninth of February, and today Tom {{is celebrating}} (celebrate) his real birthday!' },
+              { id: 't2', text: 'He usually {{has}} (have) two small parties.' },
+              { id: 't3', text: 'But right now he {{is having}} (have) one big party with all his friends.' },
+              { id: 't4', text: 'Every year his mum {{says}} (say), “Your birthday is the first of March!”' },
+              { id: 't5', text: 'Look! Emma {{is bringing}} (bring) a big birthday cake.' },
+              { id: 't6', text: 'Jack and Lily {{are singing}} (sing) a song for their dad.' },
+              { id: 't7', text: 'Tom {{doesn’t work|does not work}} (not work) today. It’s his day off!' },
+              { id: 't8', text: 'Every January he {{buys}} (buy) a new calendar.' }
             ]
           },
           {
@@ -339,7 +341,7 @@ My favourite month is May because it’s warm and sunny.`
     glossary: {
       'january': 'січень', 'february': 'лютий', 'march': 'березень', 'april': 'квітень', 'may': 'травень', 'june': 'червень',
       'july': 'липень', 'august': 'серпень', 'september': 'вересень', 'october': 'жовтень', 'november': 'листопад', 'december': 'грудень',
-      'date': 'дата, число', 'present': 'подарунок', 'birthday party': 'вечірка на день народження', 'meeting': 'зустріч, нарада', 'busy': 'зайнятий', 'free': 'вільний', 'write': 'писати', 'favourite holiday': 'улюблене свято', 'public holiday': 'державне свято', 'leap year': 'високосний рік', 'anniversary': 'річниця', 'wedding anniversary': 'річниця весілля',
+      'date': 'дата, число', 'bringing': 'несе', 'singing': 'співають', 'song': 'пісня', 'dad': 'тато', 'big day': 'великий день', 'celebrating': 'святкує', 'having': 'влаштовує (має)', 'present': 'подарунок', 'birthday party': 'вечірка на день народження', 'meeting': 'зустріч, нарада', 'busy': 'зайнятий', 'free': 'вільний', 'write': 'писати', 'favourite holiday': 'улюблене свято', 'public holiday': 'державне свято', 'leap year': 'високосний рік', 'anniversary': 'річниця', 'wedding anniversary': 'річниця весілля',
       'celebrate': 'святкувати', 'was born': 'народився(-лася)', 'born': 'народжений', 'once a year': 'раз на рік', 'the day after tomorrow': 'післязавтра',
       'the day before yesterday': 'позавчора', 'yesterday': 'вчора', 'last week': 'минулого тижня', 'next week': 'наступного тижня', 'last year': 'минулого року',
       'next year': 'наступного року', 'top': 'верх', 'page': 'сторінка', 'cousins': 'двоюрідні брати й сестри', 'see': 'бачити', 'ukraine': 'Україна', 'calendar': 'календар', 'day off': 'вихідний', 'days off': 'вихідні',
