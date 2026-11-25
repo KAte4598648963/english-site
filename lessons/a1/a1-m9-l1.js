@@ -262,7 +262,13 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             id: 'gram-tenses',
             type: 'gap',
             title: 'Tom’s big day 🎉',
-            instructions: 'Сьогодні 29 лютого 2028 року — справжній день народження Тома! Постав дієслово з дужок у правильну форму й напиши його в поле. Як обрати: usually / every year → Present Simple (he works). Now / today / right now → Present Continuous (he is working).',
+            instructions: 'Сьогодні 29 лютого 2028 року — справжній день народження Тома! Постав дієслово з дужок у правильну форму й напиши його в поле.',
+            note: `<div class="table-wrap"><table>
+  <tr><th>Present Simple</th><th>Present Continuous</th></tr>
+  <tr><td>регулярно, постійно</td><td>прямо зараз</td></tr>
+  <tr><td>usually · every year</td><td>now · today · Look!</td></tr>
+  <tr><td>he work<b>s</b></td><td>he <b>is</b> work<b>ing</b></td></tr>
+</table></div>`,
             items: [
               { id: 't1', text: 'It’s the twenty-ninth of February, and today Tom {{is celebrating}} (celebrate) his real birthday!' },
               { id: 't2', text: 'He usually {{has}} (have) two small parties.' },

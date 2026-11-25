@@ -426,6 +426,7 @@
           meta.homework ? h('p', { class: 'hw-note' }, '🏠 Це домашнє завдання: виконай його після уроку, у зручний час. Текст зберігається автоматично.') : null,
           ex.instructions ? h('p', { class: 'ex-instr' }, ex.instructions) : null
         ),
+        ex.note ? h('div', { class: 'rule-body ex-note', html: ex.note }) : null,
         ex.passage ? renderPassage(ex.passage) : null,
         ex.images ? renderImages(ex.images) : null,
         ex.video ? renderVideo(ex.video) : null,
