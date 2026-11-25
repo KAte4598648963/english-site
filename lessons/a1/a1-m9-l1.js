@@ -90,7 +90,7 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
           {
             id: 'vocab-cards',
             type: 'flashcards',
-            title: '15 useful words',
+            title: '14 useful words',
             instructions: 'Це всі нові слова уроку. Натисни на картку, щоб побачити переклад. Прочитай приклад уголос.',
             cards: [
               { front: 'What’s the date today?', back: 'Яке сьогодні число?', example: '— What’s the date today? — It’s the third of May.' },
@@ -100,7 +100,6 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
               { front: 'a holiday', ipa: '/ˈhɒlədeɪ/', back: 'свято', example: 'Christmas is my favourite holiday.' },
               { front: 'a birthday party', back: 'вечірка на день народження', example: 'Come to my birthday party!' },
               { front: 'a present', ipa: '/ˈpreznt/', back: 'подарунок', example: 'This present is for you.' },
-              { front: 'Happy birthday!', back: 'З днем народження!', example: 'Happy birthday, Tom!' },
               { front: 'celebrate', ipa: '/ˈselɪbreɪt/', back: 'святкувати', example: 'We celebrate New Year with friends.' },
               { front: 'a wedding', back: 'весілля', example: 'The wedding is the 14th of June.' },
               { front: 'an invitation', ipa: '/ˌɪnvɪˈteɪʃn/', back: 'запрошення', example: 'Thank you for the invitation!' },
@@ -132,7 +131,7 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             title: 'Party or work?',
             instructions: 'Розклади слова у дві колонки. Ліворуч — свята й вечірки. Праворуч — робота і справи. Натисни на слово, а потім на колонку.',
             columns: [
-              { title: '🎉 Party', ua: 'свята', items: ['a birthday party', 'a present', 'a wedding', 'Happy birthday!'] },
+              { title: '🎉 Party', ua: 'свята', items: ['a birthday party', 'a present', 'a wedding', 'an invitation'] },
               { title: '💼 Work', ua: 'робота, справи', items: ['a meeting', 'an appointment', 'busy', 'a calendar'] }
             ]
           },
@@ -148,7 +147,7 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
               { id: 'v4', text: 'Sorry, I can’t come. I’m very {{busy}} today.' },
               { id: 'v5', text: 'Are you {{free}} tomorrow? — Yes, I am.' },
               { id: 'v6', text: 'Thank you for the {{invitation}}! I can come to your party.' },
-              { id: 'v7', text: 'This {{present}} is for you. Happy birthday!' },
+              { id: 'v7', text: 'This {{present}} is for your birthday.' },
               { id: 'v8', text: 'We {{celebrate}} New Year with our friends.' }
             ],
             distractors: ['meeting']
@@ -350,7 +349,7 @@ My favourite month is May because it’s warm and sunny.`
     glossary: {
       'january': 'січень', 'february': 'лютий', 'march': 'березень', 'april': 'квітень', 'may': 'травень', 'june': 'червень',
       'july': 'липень', 'august': 'серпень', 'september': 'вересень', 'october': 'жовтень', 'november': 'листопад', 'december': 'грудень',
-      'date': 'дата, число', 'present': 'подарунок', 'happy birthday': 'з днем народження', 'birthday party': 'вечірка на день народження', 'meeting': 'зустріч, нарада', 'busy': 'зайнятий', 'free': 'вільний', 'write': 'писати', 'favourite holiday': 'улюблене свято', 'public holiday': 'державне свято', 'leap year': 'високосний рік', 'anniversary': 'річниця', 'wedding anniversary': 'річниця весілля',
+      'date': 'дата, число', 'present': 'подарунок', 'birthday party': 'вечірка на день народження', 'meeting': 'зустріч, нарада', 'busy': 'зайнятий', 'free': 'вільний', 'write': 'писати', 'favourite holiday': 'улюблене свято', 'public holiday': 'державне свято', 'leap year': 'високосний рік', 'anniversary': 'річниця', 'wedding anniversary': 'річниця весілля',
       'celebrate': 'святкувати', 'was born': 'народився(-лася)', 'born': 'народжений', 'once a year': 'раз на рік', 'the day after tomorrow': 'післязавтра',
       'the day before yesterday': 'позавчора', 'yesterday': 'вчора', 'last week': 'минулого тижня', 'next week': 'наступного тижня', 'last year': 'минулого року',
       'next year': 'наступного року', 'top': 'верх', 'page': 'сторінка', 'cousins': 'двоюрідні брати й сестри', 'see': 'бачити', 'ukraine': 'Україна', 'calendar': 'календар', 'day off': 'вихідний', 'days off': 'вихідні',
