@@ -838,3 +838,5 @@ body.translator .lesson textarea, body.translator .lesson input[type='text'] { c
 /* Plain numbered question list inside a rule card */
 .rule-body ol.q-list { padding-left: 1.6em; margin: 4px 0 0; }
 .rule-body ol.q-list li { margin-bottom: 12px; font-size: 1.05rem; font-weight: 600; padding-left: 4px; }
+.img-row.single { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 600px) { .img-row.single .img-fig { flex: 1 1 100%; } }

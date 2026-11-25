@@ -427,8 +427,8 @@
           ex.instructions ? h('p', { class: 'ex-instr' }, ex.instructions) : null
         ),
         ex.note ? h('div', { class: 'rule-body ex-note', html: ex.note }) : null,
-        ex.passage ? renderPassage(ex.passage) : null,
         ex.images ? renderImages(ex.images) : null,
+        ex.passage ? renderPassage(ex.passage) : null,
         ex.video ? renderVideo(ex.video) : null,
         ex.dice ? renderDice(ex.dice) : null,
         ex.audio ? renderAudio(ex.audio, !!state.checked) : null,
@@ -511,7 +511,7 @@
         document.addEventListener('keydown', onKey);
         document.body.appendChild(box);
       };
-      return h('div', { class: 'img-row' },
+      return h('div', { class: 'img-row' + (list.length === 1 ? ' single' : '') },
         list.map((img) => h('figure', { class: 'img-fig' },
           img.caption ? h('figcaption', { class: 'img-cap' }, img.caption) : null,
           h('button', { class: 'img-btn', type: 'button', title: 'Натисни, щоб збільшити', onclick: () => open(img) },

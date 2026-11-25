@@ -39,6 +39,7 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             type: 'choice',
             title: 'A Birthday Every Four Years',
             instructions: 'Прочитай історію Тома. Потім дай відповідь на кожне питання: обери один правильний варіант із трьох.',
+            images: [{ src: 'media/a1/m9/leap-day.jpg', alt: 'A calendar with the date 29 February, and friends with a birthday cake' }],
             passage: STORY,
             items: [
               { id: 'q1', q: 'Where does Tom live?', options: ['In London', 'In Brighton', 'In Bristol'], answer: 1 },
