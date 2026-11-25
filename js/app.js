@@ -427,6 +427,7 @@
           ex.instructions ? h('p', { class: 'ex-instr' }, ex.instructions) : null
         ),
         ex.passage ? renderPassage(ex.passage) : null,
+        ex.images ? renderImages(ex.images) : null,
         ex.video ? renderVideo(ex.video) : null,
         ex.dice ? renderDice(ex.dice) : null,
         ex.audio ? renderAudio(ex.audio, !!state.checked) : null,
@@ -496,6 +497,24 @@
         h('summary', null, ENG.icon('eye'), p.title || 'Text'),
         h('div', { class: 'passage-text' }, String(p.text).split(/\n\s*\n/).map((para) => h('p', null, para.trim())))
       );
+    }
+
+    /* Images: ex.images = [{ src, caption, alt }] — a row of pictures side by side; tap to view full size */
+    function renderImages(list) {
+      const open = (img) => {
+        const box = h('div', { class: 'lightbox', role: 'dialog', 'aria-label': img.caption || 'Зображення' },
+          h('img', { src: img.src, alt: img.alt || img.caption || '' }));
+        const close = () => { box.remove(); document.removeEventListener('keydown', onKey); };
+        const onKey = (e) => { if (e.key === 'Escape') close(); };
+        box.addEventListener('click', close);
+        document.addEventListener('keydown', onKey);
+        document.body.appendChild(box);
+      };
+      return h('div', { class: 'img-row' },
+        list.map((img) => h('figure', { class: 'img-fig' },
+          img.caption ? h('figcaption', { class: 'img-cap' }, img.caption) : null,
+          h('button', { class: 'img-btn', type: 'button', title: 'Натисни, щоб збільшити', onclick: () => open(img) },
+            h('img', { src: img.src, alt: img.alt || img.caption || '', loading: 'lazy' })))));
     }
 
     /* Dice: ex.dice = { label?, results: [{ n: [1, 2], text: '…' }, …] } — a tappable 6-sided die */

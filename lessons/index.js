@@ -111,6 +111,15 @@ window.ENG.registry = [
         lessons: [
           { id: 'a1-m8-l1', slug: 'lesson-1', title: 'Weather: usually… but today!', ua: 'погода · Present Simple vs Continuous', file: 'lessons/a1/a1-m8-l1.js' }
         ]
+      },
+      {
+        id: 'module-9',
+        num: 9,
+        title: 'Calendar & Appointments',
+        ua: 'Дати, плани, записи',
+        lessons: [
+          { id: 'a1-m9-l1', slug: 'lesson-1', title: 'Months & dates', ua: 'місяці · first, second, third… · як сказати дату', file: 'lessons/a1/a1-m9-l1.js' }
+        ]
       }
     ]
   },
