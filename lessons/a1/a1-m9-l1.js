@@ -55,6 +55,7 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             type: 'truefalse',
             title: 'True or False?',
             instructions: 'Прочитай кожне речення. Якщо так написано в тексті — натисни True. Якщо ні — False.',
+            images: [{ src: 'media/a1/m9/leap-day.jpg', alt: 'A calendar with the date 29 February, and friends with a birthday cake' }],
             passage: STORY,
             items: [
               { id: 's1', s: 'Tom is a teacher.', answer: true },
