@@ -820,3 +820,23 @@ body.translator .lesson textarea, body.translator .lesson input[type='text'] { c
 .chip-row .sec-chip { margin-bottom: 0; }
 .hw-chip { display: inline-flex; align-items: center; padding: 4px 11px; border-radius: 99px; font-size: 0.78rem; font-weight: 700; color: var(--warn); background: var(--warn-soft); }
 .hw-note { margin: 0 0 8px; padding: 9px 12px; border-radius: 10px; background: var(--warn-soft); color: var(--text); font-size: 0.92rem; }
+
+/* Image row (ex.images): pictures side by side, tap to zoom */
+.img-row { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; margin-bottom: 20px; align-items: start; }
+.img-fig { margin: 0; min-width: 0; }
+.img-cap { font-weight: 700; font-size: 13px; letter-spacing: 0.02em; margin-bottom: 6px; color: var(--text); }
+.img-btn { display: block; width: 100%; padding: 0; border: 1px solid var(--border); border-radius: 12px; overflow: hidden; background: var(--surface-2); cursor: zoom-in; }
+.img-btn img { display: block; width: 100%; height: auto; }
+.img-btn:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+@media (max-width: 600px) {
+  .img-row { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 10px; padding-bottom: 6px; }
+  .img-fig { flex: 0 0 64%; scroll-snap-align: start; }
+}
+.lightbox { position: fixed; inset: 0; z-index: 1000; display: flex; align-items: center; justify-content: center; padding: 16px; background: rgba(0, 0, 0, 0.85); cursor: zoom-out; }
+.lightbox img { max-width: 100%; max-height: 100%; border-radius: 8px; }
+
+/* Plain numbered question list inside a rule card */
+.rule-body ol.q-list { padding-left: 1.6em; margin: 4px 0 0; }
+.rule-body ol.q-list li { margin-bottom: 12px; font-size: 1.05rem; font-weight: 600; padding-left: 4px; }
+.img-row.single { grid-template-columns: minmax(0, 1fr); }
+@media (max-width: 600px) { .img-row.single .img-fig { flex: 1 1 100%; } }
