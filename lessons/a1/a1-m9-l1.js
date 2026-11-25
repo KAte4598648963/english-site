@@ -126,16 +126,6 @@ Every January I buy a new calendar and look for the twenty-ninth of February. In
             ]
           },
           {
-            id: 'vocab-sort',
-            type: 'sort',
-            title: 'Party or work?',
-            instructions: 'Розклади слова у дві колонки. Ліворуч — свята й вечірки. Праворуч — робота і справи. Натисни на слово, а потім на колонку.',
-            columns: [
-              { title: '🎉 Party', ua: 'свята', items: ['a birthday party', 'a present', 'a wedding', 'an invitation'] },
-              { title: '💼 Work', ua: 'робота, справи', items: ['a meeting', 'an appointment', 'busy', 'a calendar'] }
-            ]
-          },
-          {
             id: 'vocab-dnd',
             type: 'dragdrop',
             title: 'Use the new words',
